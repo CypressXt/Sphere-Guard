@@ -70,9 +70,12 @@ On the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/model/Mysq
 
 ```php
  $host='127.0.0.1';
-    $dbName='dbMonitoring';
+    $dbName='sphereguard';
     $dbUser='user';
     $dbPassword='password';
 ```
+#### Web directory
 
+Now you're done ! 
+Just host the main folder where you want and configure your web server (apache/nginix or wathever) to point into it.
 
