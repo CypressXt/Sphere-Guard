@@ -24,8 +24,30 @@ You need to install the following linux package on your futur monitored server:
 * hddtemp
 * Mysql-client
 
-#### GuardUpdate
-Now you're ready to use the GuardUpdater.sh file.
+For proper operation you need to edit the "config" section.
+```bash
+#### GuardUpdate.sh
+This file is a bash script that collect all theses server information
+* CPU usage
+* Ram usage
+* Disk (lvm drive) usage
+* CPU temperature
+* Disk temperature
+```
+
+#!/bin/bash
+
+## Config ###################################
+dbHost=127.0.0.1        #Mysql Host name/Ip
+dbUser=user             #Mysql user
+dbPassword=password     #Mysql user's pass
+dbName=dbMonitoring     #Mysql database name
+hddToWatch=/dev/sda     #temp form this hdd
+#############################################
+
+
+
+Now you're ready to use the GuardUpdater.sh file. 
 
 
 ### Web GUI
