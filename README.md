@@ -16,12 +16,12 @@ Here are the differents steps:
 
 ### Server to observe
 You need to install the following linux package on your futur monitored server:
-	* mpstat
-	* pvdisplay (if you use some lvm drive)
-	* sudo
-	* lm-sensors
-	* hddtemp
-	* Mysql-client
+* mpstat
+* pvdisplay (if you use some lvm drive)
+* sudo
+* lm-sensors
+* hddtemp
+* Mysql-client
 
 Now you're ready to use the GuardUpdater.sh file.
 
