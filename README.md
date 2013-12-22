@@ -31,6 +31,7 @@ This file is a bash script that collect all theses server information
 * Disk (lvm drive) usage
 * CPU temperature
 * Disk temperature
+
 For proper operation you need to edit the "config" section.
 
 ```bash
@@ -45,19 +46,15 @@ hddToWatch=/dev/sda     #temp form this hdd
 #############################################
 ```
 
-#!/bin/bash
+Now you're ready to use the GuardUpdater.sh file.
+You can place this file where you want on your server and set it in your "crontab" file.
 
-## Config ###################################
-dbHost=127.0.0.1        #Mysql Host name/Ip
-dbUser=user             #Mysql user
-dbPassword=password     #Mysql user's pass
-dbName=dbMonitoring     #Mysql database name
-hddToWatch=/dev/sda     #temp form this hdd
-#############################################
+Here is an exemple with an update every 15 min:
+(/etc/crontab file)
+```bash
+*/15 *	* * *	root	/home/cypress/GuardUpdate.sh
+```
 
-
-
-Now you're ready to use the GuardUpdater.sh file. 
 
 
 ### Web GUI
