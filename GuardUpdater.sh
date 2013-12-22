@@ -4,7 +4,7 @@
 dbHost=127.0.0.1        #Mysql Host name/Ip
 dbUser=user             #Mysql user
 dbPassword=password     #Mysql user's pass
-dbName=SphereGuard      #Mysql database name
+dbName=sphereguard      #Mysql database name
 hddToWatch=/dev/sda     #temp form this hdd
 #############################################
 

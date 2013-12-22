@@ -41,12 +41,12 @@ For proper operation you need to edit the "config" section.
 dbHost=127.0.0.1        #Mysql Host name/Ip
 dbUser=user             #Mysql user
 dbPassword=password     #Mysql user's pass
-dbName=SphereGuard	    #Mysql database name
+dbName=sphereguard	    #Mysql database name
 hddToWatch=/dev/sda     #temp form this hdd
 #############################################
 ```
 
-Now you're ready to use the GuardUpdater.sh file.
+Now you're ready to use the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a> file.
 You can place this file where you want on your server and set it in your "crontab" file.
 
 Here is an exemple with an update every 15 min:
@@ -62,3 +62,17 @@ You can easily create this database using the "SphereGuard.sql" sql script. So j
 <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/SphereGuard.sql">SphereGuard.sql</a>
 
 ### Web GUI
+
+Ok, the Web Gui can now soon operate.
+
+#### model/MysqlConnect.php
+On the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/model/MysqlConnect.php">model/MysqlConnect.php</a> file you have to modify the database information.
+
+```php
+ $host='127.0.0.1';
+    $dbName='dbMonitoring';
+    $dbUser='user';
+    $dbPassword='password';
+```
+
+
