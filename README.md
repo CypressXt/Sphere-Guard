@@ -24,7 +24,7 @@ You need to install the following linux package on your futur monitored server:
 * hddtemp
 * Mysql-client
 
-#### GuardUpdate.sh
+#### GuardUpdater.sh
 This file is a bash script that collect all theses server information
 * CPU usage
 * Ram usage
@@ -52,12 +52,8 @@ You can place this file where you want on your server and set it in your "cronta
 Here is an exemple with an update every 15 min:
 (/etc/crontab file)
 ```bash
-*/15 *	* * *	root	/home/cypress/GuardUpdate.sh
+*/15 *	* * *	root	/home/cypress/GuardUpdater.sh
 ```
-
-
-
-### Web GUI
-
 ### MySQL Database
 
+### Web GUI
