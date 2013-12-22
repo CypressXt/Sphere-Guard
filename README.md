@@ -15,6 +15,7 @@ Server stats view:
 Here are the differents steps:
 
 ### Server to observe
+#### Package required
 You need to install the following linux package on your futur monitored server:
 * mpstat
 * pvdisplay (if you use some lvm drive)
@@ -23,6 +24,7 @@ You need to install the following linux package on your futur monitored server:
 * hddtemp
 * Mysql-client
 
+#### GuardUpdate
 Now you're ready to use the GuardUpdater.sh file.
 
 
