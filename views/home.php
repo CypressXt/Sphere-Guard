@@ -11,35 +11,35 @@
         <script src="http://code.highcharts.com/modules/exporting.js"></script>
         <script src="javascript/jquery.onepage-scroll.js"></script>
         <script src="javascript/init.js"></script>
-		<title>CypressXt</title>
+		<title>Sphere Guard</title>
 	</head>
 	<body onload='initChart([<?php echo $chartValue; ?>])'>
 		<div class="main">
 			<section class="slideFirst">
-				<h1 class="h1Master">CypressXt Networking</h1>
+				<h1 class="h1Master">Sphere Guard</h1>
 				<div class="menuBot BgGlass">
-					<nav>
-						<ul>
-							<div id="logo" onclick="document.location.href='/'">
-		    					&nbsp;
-							</div>
-							<li>
-								<a href="/mail">Mail</a>
-							</li>
-							<li>
-								<a href="/colibri">Colibri</a>
-							</li>
-							<li>
-								<a href="/japon">Japon</a>
-							</li>
-							<li>
-								<a href="https://github.com/CypressXt">GitHub</a>
-							</li>
-							<li>
-								<a href="https://www.youtube.com/user/cypressXt">Youtube</a>
-							</li>
-						</ul>
-					</nav>
+				    <nav>
+				            <ul>
+				                    <div id="logo" onclick="document.location.href='/'">
+				                        &nbsp;
+				                    </div>
+				                    <li>
+				                            <a href="/#">item1</a>
+				                    </li>
+				                    <li>
+				                            <a href="/#">item2</a>
+				                    </li>
+				                    <li>
+				                            <a href="/#">item3</a>
+				                    </li>
+				                    <li>
+				                            <a href="#">item4</a>
+				                    </li>
+				                    <li>
+				                            <a href="#">item5</a>
+				                    </li>
+				            </ul>
+				    </nav>
 				</div>
 			</section>
 			<section class"slide">
