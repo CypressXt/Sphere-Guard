@@ -11,6 +11,9 @@ Global server usage view:
 Server stats view:
 ![Alt text](https://lh6.googleusercontent.com/-UK0ZacKukRs/Urbf56PGUqI/AAAAAAAAByI/hFNKdKU4f68/w2236-h912-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2013-12-22+a%25CC%2580+13.49.17.png "Global server usage")
 
+
+<a href="https://github.com/CypressXt/Sphere-Guard/releases/">Download it!</a>
+
 # Installation
 Here are the differents steps:
 
