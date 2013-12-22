@@ -56,4 +56,9 @@ Here is an exemple with an update every 15 min:
 ```
 ### MySQL Database
 
+A MySQL database is required because the GuardUpdater will store its values ​​obtained during it survey.
+You can easily create this database using the "SphereGuard.sql" sql script. So just use the phpmyadmin "import" fonction or execute it in a MySQL terminal.
+
+<a href="https://github.com/CypressXt/Sphere-Guard/blob/master/SphereGuard.sql">SphereGuard.sql</a>
+
 ### Web GUI
