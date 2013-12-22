@@ -77,5 +77,16 @@ On the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/model/Mysq
 #### Web directory
 
 Now you're done ! 
-Just host the main folder where you want and configure your web server (apache/nginix or wathever) to point into it.
+Just host the main folder where you want and configure your web server (apache/nginx or whatever) to point into it.
+
+```apache
+Alias /sphereGuard     /var/www/htdocs/sphereGuard/
+
+<Directory /var/www/htdocs/sphereGuard/>
+    Order Allow,Deny
+    Allow from all
+</Directory>
+```
+
+Enjoy !
 
