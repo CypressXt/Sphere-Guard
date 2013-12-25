@@ -94,6 +94,7 @@ body{
   	top: 0; left: 0; bottom: 0; right: 0;
 	color: #FFF;
 	width: 100%;
+	display: table;
 }
 
 .content30 h1{
@@ -133,6 +134,12 @@ body{
 	color: #FFF;
 	width: 80%;
 	border-radius: 10px;
+	display: table;
+}
+
+.mid{
+	display: table-cell;
+    vertical-align: middle;
 }
 
 .BgGlass{
