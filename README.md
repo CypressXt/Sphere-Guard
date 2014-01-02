@@ -17,6 +17,9 @@ Server stats view:
 * Google Chrome 31
 * Firefox 26
 * Safari 7.0
+* IOS 7 browsers
+* Origin browser
+* Samsung smartTv browser
 
 <a href="https://github.com/CypressXt/Sphere-Guard/releases/">Download it!</a>
 
