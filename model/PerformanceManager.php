@@ -57,7 +57,7 @@ class PerformanceManager {
 	public function getAllCPUTemp(){
 		$q = $this->_db->prepare('SELECT * FROM `performance` 
 									WHERE `fk_type` = 4 and `fk_host` = 1
-									order by date');
+									order by date limit 192');
 		$q->execute();
 
 		$chartValue ="";
