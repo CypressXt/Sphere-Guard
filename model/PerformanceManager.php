@@ -64,9 +64,9 @@ class PerformanceManager {
 		$i = 0;
 		while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
 			if($i==0){
-				$chartValue="[\"".$data[date]."\", ".$data[value]."]";
+				$chartValue="[\"".$data["date"]."\", ".$data["value"]."]";
 			}else{
-            	$chartValue = $chartValue.", [\"".$data[date]."\", ".$data[value]."]";	
+            	$chartValue = $chartValue.", [\"".$data["date"]."\", ".$data["value"]."]";	
 			}
             $i++;
         }

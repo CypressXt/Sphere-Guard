@@ -60,18 +60,18 @@
 							</tr>
 							<tr>
 								<td>
-									<input value="<?php echo $cpuPerfArray[value]; ?>" id="CpuUsage" type="text" class="dial" >
+									<input value="<?php echo $cpuPerfArray["value"]; ?>" id="CpuUsage" type="text" class="dial" >
 								</td>
 								<td>
-									<input value="<?php echo $ramPerfArray[value]; ?>" id="RamUsage" type="text" class="dial">
+									<input value="<?php echo $ramPerfArray["value"]; ?>" id="RamUsage" type="text" class="dial">
 								</td>
 								<td>
-									<input value="<?php echo $diskPerfArray[value]; ?>" id="DiskUsage" type="text" class="dial">
+									<input value="<?php echo $diskPerfArray["value"]; ?>" id="DiskUsage" type="text" class="dial">
 								</td>
 							</tr>
 						</table>
 						<p><?php 
-							$date = date_create($cpuPerfArray[date]);
+							$date = date_create($cpuPerfArray["date"]);
 	    					$dateFormated = date_format($date, "d.m H:i");
 	    					echo $dateFormated;
 						?></p>
@@ -85,18 +85,18 @@
 						<table>
 							<tr>
 								<td>
-									<label for="cpuTemp">CPU : <?php echo $cpuTempArray[value]; ?>°C</label>
+									<label for="cpuTemp">CPU : <?php echo $cpuTempArray["value"]; ?>°C</label>
 								</td>
 								<td>
-									<label for="hddTemp">HDD (sda) : <?php echo $diskTempArray[value]; ?>°C</label>
+									<label for="hddTemp">HDD (sda) : <?php echo $diskTempArray["value"]; ?>°C</label>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<progress id="cpuTemp" value="<?php echo $cpuTempArray[value]; ?>" max="100"></progress>
+									<progress id="cpuTemp" value="<?php echo $cpuTempArray["value"]; ?>" max="100"></progress>
 								</td>
 								<td>
-									<progress id="hddTemp" value="<?php echo $diskTempArray[value]; ?>" max="100"></progress>
+									<progress id="hddTemp" value="<?php echo $diskTempArray["value"]; ?>" max="100"></progress>
 								</td>
 							</tr>
 						</table>
