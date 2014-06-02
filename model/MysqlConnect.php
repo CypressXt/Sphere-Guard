@@ -1,13 +1,9 @@
 <?php
 
-
+// Connexion à la base de données
 try
 {
-    $host='127.0.0.1';
-    $dbName='sphereguard';
-    $dbUser='user';
-    $dbPassword='password';
-    $db = new PDO('mysql:host=$host;dbname=$dbName', $dbUser, $dbPassword);
+    $db = new PDO('mysql:host=localhost;dbname=SphereGuard', 'guard', 'YourPassword');
 }
 catch(Exception $e)
 {
