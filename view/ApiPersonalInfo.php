@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * CypressXt
+ */
+
 $dashboardContent = '
 <div class="page-header">
     <h1>Personal Informations</h1>

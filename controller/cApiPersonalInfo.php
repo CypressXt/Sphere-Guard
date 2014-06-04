@@ -1,9 +1,7 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * CypressXt
  */
 
 if (!isset($_SESSION['SphereGuardLogged'])) {
@@ -14,49 +12,45 @@ if (!isset($_SESSION['SphereGuardLogged'])) {
     $userName = $user['name'];
     $userMail = $user['mail'];
     include_once ('view/ApiPersonalInfo.php');
+    checkUpdateInfo($db);
     $dashboardError = $_SESSION['SphereGuardError'];
     include_once 'view/ApiDashboard.php';
 }
 
-function checkUpdateInfo() {
+function checkUpdateInfo($db) {
     if (isset($_SESSION['SphereGuardLogged'])) {
         if (isset($_POST['submitUpdate'])) {
+            include_once 'model/ApiManager.php';
             $newUserName = $_POST['inputName'];
             $newMail = $_POST['inputMail'];
             $newPassword = $_POST['inputPass'];
             $newPasswordConf = $_POST['inputPassConf'];
-            $userManager = new UserManager($db);
-            $user = new User(array());
-            $user = unserialize($_SESSION['loggedUserObjectDuoQ']);
-
+            $user = unserialize($_SESSION['SphereGuardLogged']);
+            $apiManager = new ApiManager($db);
             // check if the username is valid and don't exist 
-            if ($newUserName != "" && !$userManager->isUserNameTaken($newMail)) {
-                
-            } else {
-                $_SESSION['errorForm'] = $_SESSION['errorForm'] . "</br>Invalid username";
+            if ($newUserName == "") {
+                $_SESSION['SphereGuardError'] = $_SESSION['errorForm'] . '<div class="alert alert-warning">Invalid name</div>';
                 return false;
             }
 
             //check if the password is valid and is equals to the passwordCheck
-            if ($newPassword != "" && $newPassword == $newPasswordConf) {
-                
-            } else {
-                $_SESSION['errorForm'] = $_SESSION['errorForm'] . "</br>Invalid password or password confirmation";
+            if ($newPassword == "" || $newPassword != $newPasswordConf) {
+                $_SESSION['SphereGuardError'] = $_SESSION['errorForm'] . '<div class="alert alert-warning">Invalid password or password confirmation</div>';
                 return false;
             }
 
             //check if the mail@ is valid and don't already exist
-            if ($newMail != "" && !$userManager->isMailTakenByOther($user, $newMail)) {
-                
-            } else {
-                $_SESSION['errorForm'] = $_SESSION['errorForm'] . "</br>Invalid @Mail or already taken";
+            if ($newMail == "" || $apiManager->isMailTakenByOther($user, $newMail)) {
+                $_SESSION['SphereGuardError'] = $_SESSION['errorForm'] . '<div class="alert alert-warning">Invalid @Mail or already taken</div>';
                 return false;
             }
-            $user->setName($newUserName);
-            $user->setMail($newMail);
-            $user->setPassword(sha1($newPassword));
-            $userManager->updateUserInfo($user);
-            $_SESSION['loggedUserObjectDuoQ'] = serialize($user);
+
+            $user['name'] = $newUserName;
+            $user['password'] = sha1($newPassword);
+            $user['mail'] = $newMail;
+            $apiManager->updateApi($user);
+            $_SESSION['SphereGuardLogged'] = serialize($user);
+            $_SESSION['SphereGuardError'] = "";
         }
     }
 }
