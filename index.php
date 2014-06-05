@@ -29,3 +29,4 @@ switch ($l) {
         include_once "controller/cApiDashboardHome.php";
         break;
 }
+$db = null;

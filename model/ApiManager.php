@@ -50,6 +50,22 @@ class ApiManager {
         }
     }
 
+    public function getAllApi() {
+        $apiArray = array();
+        try {
+            $q = $this->db->prepare('SELECT * FROM `api`');
+            $this->db->beginTransaction();
+            $q->execute();
+            while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+                $apiArray[] = $data;
+            }
+            $this->db->commit();
+        } catch (PDOException $exc) {
+            $this->db->rollback();
+        }
+        return $apiArray;
+    }
+
     public function isMailTakenByOther($user, $newMail) {
         $q = $this->db->prepare('SELECT * FROM `api` WHERE mail like :mail');
         $q->bindValue(':mail', $newMail, PDO::PARAM_STR);

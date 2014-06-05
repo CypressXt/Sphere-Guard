@@ -35,7 +35,7 @@ $dashboardContent = '
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button name="submitUpdate" type="submit" class="btn btn-default">Update</button>
+            <button name="submitUpdate" type="submit" class="btn btn-primary btn-sm">Update</button>
         </div>
     </div>
 </form>';
