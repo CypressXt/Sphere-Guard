@@ -4,7 +4,7 @@
  * CypressXt
  */
 
-class ApiManager {
+class UserManager {
 
     private $db;
 

@@ -8,25 +8,26 @@ if (!isset($_SESSION['SphereGuardLogged'])) {
     $_SESSION['askedSphereGuard'] = "personalInfo";
     header('Location: /SphereGuard/index.php?l=login');
 } else {
-    $user = unserialize($_SESSION['SphereGuardLogged']);
-    $userName = $user['name'];
-    $userMail = $user['mail'];
+    include_once 'model/User.php';
+    $userLogged = new User(unserialize($_SESSION['SphereGuardLogged']));
+    $userName = $userLogged->getName();
+    $userMail = $userLogged->getMail();
     include_once ('view/ApiPersonalInfo.php');
-    checkUpdateInfo($db);
+    checkUpdateInfo($db, $userLogged);
     $dashboardError = $_SESSION['SphereGuardError'];
     include_once 'view/ApiDashboard.php';
 }
 
-function checkUpdateInfo($db) {
+function checkUpdateInfo($db, $userLogged) {
     if (isset($_SESSION['SphereGuardLogged'])) {
         if (isset($_POST['submitUpdate'])) {
-            include_once 'model/ApiManager.php';
+            include_once 'model/UserManager.php';
+            $userLogged = new User($userLogged);
             $newUserName = $_POST['inputName'];
             $newMail = $_POST['inputMail'];
             $newPassword = $_POST['inputPass'];
             $newPasswordConf = $_POST['inputPassConf'];
-            $user = unserialize($_SESSION['SphereGuardLogged']);
-            $apiManager = new ApiManager($db);
+            $userManager = new UserManager($db);
             // check if the username is valid and don't exist 
             if ($newUserName == "") {
                 $_SESSION['SphereGuardError'] = $_SESSION['errorForm'] . '<div class="alert alert-warning">Invalid name</div>';
@@ -40,15 +41,15 @@ function checkUpdateInfo($db) {
             }
 
             //check if the mail@ is valid and don't already exist
-            if ($newMail == "" || $apiManager->isMailTakenByOther($user, $newMail)) {
+            if ($newMail == "" || $userManager->isMailTakenByOther($user, $newMail)) {
                 $_SESSION['SphereGuardError'] = $_SESSION['errorForm'] . '<div class="alert alert-warning">Invalid @Mail or already taken</div>';
                 return false;
             }
 
-            $user['name'] = $newUserName;
-            $user['password'] = sha1($newPassword);
-            $user['mail'] = $newMail;
-            $apiManager->updateApi($user);
+            $userLogged->setName($newUserName);
+            $userLogged->setPassword(sha1($newPassword));
+            $userLogged->setMail($newMail);
+            $userManager->updateApi($user);
             $_SESSION['SphereGuardLogged'] = serialize($user);
             $_SESSION['SphereGuardError'] = "";
         }
