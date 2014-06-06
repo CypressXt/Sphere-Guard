@@ -4,6 +4,7 @@
  * CypressXt
  */
 
+include_once 'model/User.php';
 include_once 'model/UserManager.php';
 $dashboardContent = file_get_contents('view/Login.php');
 $dashboardError = $_SESSION['SphereGuardError'];
@@ -17,9 +18,9 @@ function checkLogin($db) {
         $password = $_POST['inputPassword'];
         $password = sha1($password);
         $userManager = new UserManager($db);
-        $checkResult = $userManager->checkLogin($userName, $password);
-        if ($checkResult != null) {
-            $_SESSION['SphereGuardLogged'] = serialize($checkResult);
+        $userLogged = $userManager->checkLogin($userName, $password);
+        if ($userLogged != null) {
+            $_SESSION['SphereGuardLogged'] = serialize($userLogged);
             if (!isset($_SESSION['askedSphereGuard'])) {
                 header('Location: /SphereGuard/index.php?l=apiDashboard');
             } else {

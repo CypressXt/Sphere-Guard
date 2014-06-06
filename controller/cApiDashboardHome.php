@@ -12,7 +12,7 @@ if (!isset($_SESSION['SphereGuardLogged'])) {
     header('Location: /SphereGuard/index.php?l=login');
 } else {
     include_once 'model/User.php';
-    $userLogged = new User(unserialize($_SESSION['SphereGuardLogged']));
+    $userLogged = unserialize($_SESSION['SphereGuardLogged']);
     $userName = $userLogged->getName();
     $userMail = $userLogged->getMail();
     include_once 'view/ApiDashboardHome.php';

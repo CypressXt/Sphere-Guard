@@ -29,7 +29,7 @@ class UserManager {
         $q->execute();
         $data = $q->fetch(PDO::FETCH_ASSOC);
         if ($data) {
-            return $data;
+            return new User($data);
         } else {
             return null;
         }
@@ -38,10 +38,10 @@ class UserManager {
     public function updateApi($user) {
         try {
             $q = $this->db->prepare('UPDATE `api` SET `name` = :name, `password` = :password, `mail` = :mail WHERE `pk_api` = :pkApi');
-            $q->bindValue(':name', $user['name'], PDO::PARAM_STR);
-            $q->bindValue(':password', $user['password'], PDO::PARAM_STR);
-            $q->bindValue(':mail', $user['mail'], PDO::PARAM_STR);
-            $q->bindValue(':pkApi', $user['pk_api'], PDO::PARAM_STR);
+            $q->bindValue(':name', $user->getName(), PDO::PARAM_STR);
+            $q->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
+            $q->bindValue(':mail', $user->getMail(), PDO::PARAM_STR);
+            $q->bindValue(':pkApi', $user->getPk_api(), PDO::PARAM_STR);
             $this->db->beginTransaction();
             $q->execute();
             $this->db->commit();
@@ -57,7 +57,7 @@ class UserManager {
             $this->db->beginTransaction();
             $q->execute();
             while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
-                $apiArray[] = $data;
+                $apiArray[] = new User($data);
             }
             $this->db->commit();
         } catch (PDOException $exc) {
@@ -73,12 +73,11 @@ class UserManager {
         $data = $q->fetch(PDO::FETCH_ASSOC);
         if ($data) {
             $mailProprietary = $data;
-            if ($mailProprietary['pk_api'] != $user['pk_api']) {
+            if ($mailProprietary['pk_api'] != $user->getPk_api()) {
                 return true;
             }
-        } else {
-            return false;
         }
+        return false;
     }
 
 }
