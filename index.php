@@ -22,7 +22,11 @@ switch ($l) {
     case "logout":
         include_once "controller/cLogout.php";
         break;
+    case "personalInfo":
+        include_once "controller/cApiPersonalInfo.php";
+        break;
     case false:
         include_once "controller/cApiDashboardHome.php";
         break;
 }
+$db = null;
