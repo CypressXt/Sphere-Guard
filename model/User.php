@@ -11,6 +11,7 @@ class User {
     private $password;
     private $mail;
     private $key;
+    private $admin;
 
     //Constructor
     //-----------
@@ -41,6 +42,10 @@ class User {
         return $this->key;
     }
 
+    public function getAdmin() {
+        return $this->admin;
+    }
+
     // Setters
     //--------
 
@@ -63,6 +68,10 @@ class User {
 
     public function setKey($key) {
         $this->key = $key;
+    }
+
+    public function setAdmin($admin) {
+        $this->admin = $admin;
     }
 
     //Hydrate function

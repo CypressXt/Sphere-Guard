@@ -35,6 +35,24 @@ class UserManager {
         }
     }
 
+    public function addApi(User $user) {
+        $isOk = false;
+        try {
+            $q = $this->db->prepare('INSERT INTO `api`(`name`, `password`, `mail`, `key`) VALUES (:name,:password,:mail,:key)');
+            $q->bindValue(':name', $user->getName(), PDO::PARAM_STR);
+            $q->bindValue(':password', sha1($user->getPassword()), PDO::PARAM_STR);
+            $q->bindValue(':mail', $user->getMail(), PDO::PARAM_STR);
+            $q->bindValue(':key', sha1(rand()), PDO::PARAM_STR);
+            $this->db->beginTransaction();
+            $q->execute();
+            $this->db->commit();
+            $isOk = true;
+        } catch (PDOException $e) {
+            $this->db->rollback();
+        }
+        return $isOk;
+    }
+
     public function updateApi(User $user) {
         $isOk = false;
         try {

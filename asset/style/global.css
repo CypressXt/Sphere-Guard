@@ -1,11 +1,5 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
-    Created on : 28 mai 2014, 18:01:42
-    Author     : CypressXt
+ *   CypressXt
 */
 
 html{
@@ -102,4 +96,8 @@ body{
 
 .page-header h1{
     font-size: 38px;
+}
+
+td{
+    vertical-align: middle !important;
 }

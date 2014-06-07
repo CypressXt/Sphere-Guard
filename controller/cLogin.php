@@ -19,7 +19,7 @@ function checkLogin($db) {
         $password = sha1($password);
         $userManager = new UserManager($db);
         $userLogged = $userManager->checkLogin($userName, $password);
-        if ($userLogged != null) {
+        if ($userLogged != null && $userLogged->getAdmin() == 1) {
             $_SESSION['SphereGuardLogged'] = serialize($userLogged);
             if (!isset($_SESSION['askedSphereGuard'])) {
                 header('Location: /SphereGuard/index.php?l=apiDashboard');
@@ -27,7 +27,11 @@ function checkLogin($db) {
                 header('Location: /SphereGuard/index.php?l=' . $_SESSION['askedSphereGuard']);
             }
         } else {
-            $_SESSION['SphereGuardError'] = '<div class="alert alert-warning">Wrong login or password</div>';
+            if ($userLogged->getAdmin() != 1) {
+                $_SESSION['SphereGuardError'] = '<div class="alert alert-warning">You\'ve no rights here</div>';
+            } else {
+                $_SESSION['SphereGuardError'] = '<div class="alert alert-warning">Wrong login or password</div>';
+            }
             header('Location: /SphereGuard/index.php?l=login');
         }
     }

@@ -7,6 +7,7 @@
             <?php echo $dashboardContent; ?>
         </div>
     </div>
+    <?php include_once 'Modal.php'; ?>
 </body>
 </html>
 

@@ -41,7 +41,7 @@ function checkUpdateInfo($db, $userLogged) {
             }
 
             //check if the mail@ is valid and don't already exist
-            if ($newMail == "" || $userManager->isMailTakenByOther($userLogged, $newMail)) {
+            if ($newMail == "" ) {
                 $_SESSION['SphereGuardError'] = $_SESSION['errorForm'] . '<div class="alert alert-warning">Invalid @Mail or already taken</div>';
                 return false;
             }
