@@ -260,7 +260,7 @@ Array
 
 ### getChartByHost
 
-This method return the actual server state by id (hostname, Ip address, cpu usage, ram usage, disk usage and disk temperature).
+TThis method return information about an host for the last 24 hours (cpu usage, ram usage, disk usage, disk temperature and the statement date).
 
 #### The call
 
