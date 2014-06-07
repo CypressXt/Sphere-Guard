@@ -25,6 +25,8 @@ You can refresh all the api key here. You can also create new users (futur api c
 
 # Developments in progress
 
+You can follow here the (futur) development of Sphere-Guard
+
 ## API
  
 | Feature                                                                                                  | Status                |
@@ -44,7 +46,7 @@ You can refresh all the api key here. You can also create new users (futur api c
 | Manage your personnal information                                                                        | Operational √         |
 | Manage your personnal information in AJAX                                                                | Not implemented yet X |
 | Administrator authentication                                                                             | Operational √         |
-| Manage watched hosts                                                                                     | Not implemented yet X |
+| Manage watched hosts:                                                                                    | Not implemented yet X |
 | - Add a watched host                                                                                     | Not implemented yet X |
 | - Remove a watched host                                                                                  | Not implemented yet X |
 | - Manage watched hosts                                                                                   | Not implemented yet X |
