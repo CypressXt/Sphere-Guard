@@ -93,7 +93,9 @@ body{
     line-height: 80px;
 }
 
-
+.page-header{
+    border-bottom: 1px solid #000;
+}
 .page-header h1{
     font-size: 38px;
 }
