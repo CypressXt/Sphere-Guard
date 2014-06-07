@@ -5,8 +5,9 @@
         <li onClick="location.href = '#'" class="darker">Chart</li>
         <li onClick="location.href = '#'" class="clearer">Statistics</li>
     </ul> 
-    <div class="MenuSeparator">Authentication settings</div>
-    <ul> 
+    <div class="MenuSeparator">Settings</div>
+    <ul>
+        <li onClick="location.href = '/SphereGuard/index.php?l=#'" class="clearer">Manage Hosts</li>
         <li onClick="location.href = '/SphereGuard/index.php?l=apiKeyManagement'" class="clearer">API Users & API Keys</li>
     </ul>
     <div class="MenuSeparator">My account</div>
