@@ -27,7 +27,7 @@ if ($api->checkApiKey($apiKey, $apiUser)) {
             echo $api->joinHostAndInfo($api->getAllHosts());
             break;
         case "getInfoByHost":
-            echo($api->getInfoByHost($inset));
+            echo $api->getInfoByHost($inset);
             break;
         case "getChartByHost":
             $chartData = $api->getChartByHost($inset);
