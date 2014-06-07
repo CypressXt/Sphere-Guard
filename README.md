@@ -26,8 +26,8 @@ You need to install the following linux package on your futur monitored server:
 * hddtemp
 * Mysql-client
 
-### <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a>
-This file is a bash script that collect all theses server information
+### GuardUpdater.sh
+<a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">This file</a> is a bash script that collect all theses server information
 * CPU usage
 * Ram usage
 * Disk (lvm drive) usage
@@ -50,3 +50,16 @@ hddToWatch=/dev/sda     #temp form this hdd
 
 Now you're ready to use the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a> file.
 You can place this file where you want on your server and set it in your "crontab" file.
+
+Here is an exemple with an update every 15 min:
+(/etc/crontab file)
+```bash
+*/15 *	* * *	root	/home/cypress/SphereGuard/GuardUpdater.sh
+```
+
+
+## MySQL Database (IN DEVELOPMENT)
+
+A MySQL database is required because the GuardUpdater will store its values ​​obtained during it survey.
+You can easily create this database using the "SphereGuard.sql" sql script. So just use the phpmyadmin "import" fonction or execute it in a MySQL terminal.
+
