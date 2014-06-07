@@ -129,7 +129,7 @@ You can find here all the syntax and the methods available in the API.
 
 All the variables like "[myVar]" have to be set with correct value found in your Database or in the admin panel.
 
-For exemple the web address of your api is written like this:
+For example the web address of your api is written like this:
 ```
 http://[yourWebServer]/SphereGuard/
 ```
@@ -137,7 +137,7 @@ http://[yourWebServer]/SphereGuard/
 replace the variable like this:
 
 ```
-http://exemple.com/SphereGuard/
+http://example.com/SphereGuard/
 ```
 
 ## Available methods
