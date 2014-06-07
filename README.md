@@ -255,3 +255,94 @@ Array
 
 )
 ```
+
+
+
+### getChartByHost
+
+This method return the actual server state by id (hostname, Ip address, cpu usage, ram usage, disk usage and disk temperature).
+
+#### The call
+
+#####Input parameters:
+
+* user=[yourApiUser]
+* key=[theApiUserKey]
+* inset=[HostUniqueID]
+* function=getChartByHost
+
+```
+http://[yourWebServer]/SphereGuard/index.php?l=api&user=[youApiUser]&key=[theApiUserKey]&function=getChartByHost&inset=[HostUniqueID]
+```
+
+#### The JSON result
+```
+{
+    "cpuUsage": [
+        {
+            "value": "104.6"
+        },
+        {
+            "value": "19.6"
+        },
+        {
+            "value": "26.1"
+        }
+    ],
+    "cpuTemp": [
+        {
+            "value": "57.0"
+        },
+        {
+            "value": "54.0"
+        },
+        {
+            "value": "54.0"
+        }
+    ],
+    "ramUsage": [
+        {
+            "value": "100"
+        },
+        {
+            "value": "100"
+        },
+        {
+            "value": "100"
+        }
+    ],
+    "diskUsage": [
+        {
+            "value": "59"
+        },
+        {
+            "value": "59"
+        },
+        {
+            "value": "59"
+        }
+    ],
+    "diskTemp": [
+        {
+            "value": "40"
+        },
+        {
+            "value": "40"
+        },
+        {
+            "value": "38"
+        }
+    ],
+    "date": [
+        {
+            "value": "2014-06-07 01:15:02"
+        },
+        {
+            "value": "2014-06-07 01:30:02"
+        },
+        {
+            "value": "2014-06-08 01:00:02"
+        }
+    ]
+}
+```
