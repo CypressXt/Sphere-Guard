@@ -11,10 +11,19 @@ Sphere-Guard is a simple monitoring tools available with his proper API.
 
 This tool can be installed easily on most of the UNIX based OS.
 
+## Admin panel
 
+Here are some screenshot of the API admin panel:
+
+Login view:
+![Alt text](https://lh4.googleusercontent.com/-qq0ZpTVwVyg/U5N91ITF_nI/AAAAAAAAB80/BR9aGsYAk5Y/w2868-h1598-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-07+a%25CC%2580+23.01.15.png "Login view")
+
+Api key and user management view:
+![Alt text](https://lh6.googleusercontent.com/-VomJR6E0ukc/U5OAOJN48TI/AAAAAAAAB9E/fNlT0REb0L4/w2876-h1608-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-07+a%25CC%2580+23.05.42.png "Api key and user management view")
 
 # Installation
 Here are the differents steps:
+
 
 ## Server to observe
 ### Package required
