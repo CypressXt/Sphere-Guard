@@ -31,13 +31,13 @@ function requestAjaxRefreshKeyUser(userId) {
 }
 
 
-function requestAjaxCreateUser(name, mail, password, passwordConf) {
+function requestAjaxCreateUser(name, mail, password, passwordConf, isAdministrator) {
     var name = name.val();
     var mail = mail.val();
     var password = password.val();
     var passConf = passwordConf.val();
     var modalNotif = document.getElementById('modalNotifArea');
-    $.post('/SphereGuard/controller/cAjax.php', {function: "addUser", name: name, mail: mail, password: password, passConf: passConf}, function(e) {
+    $.post('/SphereGuard/controller/cAjax.php', {function: "addUser", name: name, mail: mail, password: password, passConf: passConf, isAdministrator: isAdministrator}, function(e) {
         if (e === "1") {
             modalNotif.innerHTML = '<div class = "alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>New api user created successfully !</div>';
             $('#newUserForm').find(':input').each(function() {

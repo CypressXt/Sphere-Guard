@@ -13,7 +13,7 @@ if (!isset($_SESSION['SphereGuardLogged'])) {
     $tableRow = displayUserAndKey($db, $userLogged);
     $modalBody = displayNewUserFrom($db);
     $modalRightButtonText = "Create";
-    $modalRightButtonOnclick = "requestAjaxCreateUser($('input[name=inputName]'), $('input[name=inputMail]'), $('input[name=inputPass]'), $('input[name=inputPassConf]'))";
+    $modalRightButtonOnclick = "requestAjaxCreateUser($('input[name=inputName]'), $('input[name=inputMail]'), $('input[name=inputPass]'), $('input[name=inputPassConf]'), $('#isAdministrator').is(':checked'))";
     $modalTitle = "New api user";
     include_once ('view/ApiKeyUser.php');
     $dashboardError = $_SESSION['SphereGuardError'];
@@ -88,7 +88,7 @@ function displayNewUserFrom($db) {
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
         <label>
-          <input type="checkbox"> Api administrator
+          <input id="isAdministrator" type="checkbox"> Api administrator
         </label>
       </div>
     </div>

@@ -40,14 +40,16 @@ if ($_POST['function'] == "refreshKey" && $_POST['user_pk'] != "") {
     }
 }
 
-if ($_POST['function'] == "addUser" && $_POST['name'] != "" && $_POST['mail'] != "" && $_POST['password'] != "" && $_POST['passConf'] != "") {
+if ($_POST['function'] == "addUser" && $_POST['name'] != "" && $_POST['mail'] != "" && $_POST['password'] != "" && $_POST['passConf'] != "" && $_POST['isAdministrator'] != "") {
     if (isset($_SESSION['SphereGuardLogged'])) {
+        $isAdmin = ($_POST['isAdministrator'] == "true") ? 1 : 0;
         if ($_POST['password'] == $_POST['passConf']) {
             $userManager = new UserManager($db);
             $userData = Array(
                 'name' => $_POST['name'],
                 'mail' => $_POST['mail'],
-                'password' => $_POST['password']
+                'password' => $_POST['password'],
+                'admin' => $isAdmin
             );
             $newUser = new User($userData);
             $result = $userManager->addApi($newUser);
