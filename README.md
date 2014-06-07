@@ -154,9 +154,9 @@ This method return all the server that you're monitoring with the actual hostnam
 
 #####Input parameters: 
 
-*user=[youApiUser]
-*key=[theApiUserKey]
-*function=getAllHosts
+* user=[youApiUser]
+* key=[theApiUserKey]
+* function=getAllHosts
 
 ```
 http://[yourWebServer]/SphereGuard/index.php?l=api&user=[youApiUser]&key=[theApiUserKey]&function=getAllHosts
@@ -179,10 +179,10 @@ This method return the actual server state by id (hostname, Ip address, cpu usag
 
 #####Input parameters:
 
-*user=[youApiUser]
-*key=[theApiUserKey]
-*inset=[HostUniqueID]
-*function=getInfoByHost
+* user=[youApiUser]
+* key=[theApiUserKey]
+* inset=[HostUniqueID]
+* function=getInfoByHost
 
 ```
 http://[yourWebServer]/SphereGuard/index.php?l=api&user=[youApiUser]&key=[theApiUserKey]&function=getInfoByHost&inset=[HostUniqueID]
