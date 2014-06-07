@@ -34,10 +34,12 @@ You can follow here the (futur) development of Sphere-Guard
 | Publishing the MySQL database script                                                                     | Not implemented yet X |
 | Document all the api's functions                                                                         | Not implemented yet X |
 | Set up a demo website                                                                                    | Not implemented yet X |
-| Develope a mobile client application (IOS):                                                               | nearly finished   ... |
-| -- Release the application on the App Store                                                               | Not implemented yet X |
-| -- Document the mobile application                                                                        | Not implemented yet X |
+| Develope a mobile client application (IOS):                                                              | nearly finished   ... |
+| -- Release the application on the App Store                                                              | Not implemented yet X |
+| -- Document the mobile application                                                                       | Not implemented yet X |
 | Develope a mobile client application (Android)                                                           | Not implemented yet X |
+| Develope a mobile client application (Windows Phone)                                                     | Not implemented yet X |
+| Manage to get normal volume information (not only lvm volume)                                            | Not implemented yet X |
 
 ## API
  
@@ -53,15 +55,15 @@ You can follow here the (futur) development of Sphere-Guard
 | Feature                                                                                                  | Status                |
 | :------------------------------------------------------------------------------------------------------- |:----------------------|
 | Manage api users and key:                                                                                | Operational √         |
-| -- Refresh a user api's key                                                                               | Operational √         |
-| -- Delete a api's user                                                                                    | Operational √         |
+| -- Refresh a user api's key                                                                              | Operational √         |
+| -- Delete a api's user                                                                                   | Operational √         |
 | Manage your personnal information                                                                        | Operational √         |
 | Manage your personnal information in AJAX                                                                | Not implemented yet X |
 | Administrator authentication                                                                             | Operational √         |
 | Manage watched hosts:                                                                                    | Not implemented yet X |
-| -- Add a watched host                                                                                     | Not implemented yet X |
-| -- Remove a watched host                                                                                  | Not implemented yet X |
-| -- Manage watched hosts                                                                                   | Not implemented yet X |
+| -- Add a watched host                                                                                    | Not implemented yet X |
+| -- Remove a watched host                                                                                 | Not implemented yet X |
+| -- Manage watched hosts                                                                                  | Not implemented yet X |
 
 
 # Installation
@@ -101,11 +103,12 @@ hddToWatch=/dev/sda     #temp form this hdd
 #############################################
 ```
 
+You can find your host unique ID in the "Manage hosts" section on your admin panel.
+
 Now you're ready to use the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a> file.
 You can place this file where you want on your server and set it in your "crontab" file.
 
-Here is an exemple with an update every 15 min:
-(/etc/crontab file)
+Here is an exemple with an update every 15 min:(/etc/crontab file)
 ```bash
 */15 *	* * *	root	/home/cypress/SphereGuard/GuardUpdater.sh
 ```
