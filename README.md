@@ -20,6 +20,10 @@ Login view:
 
 Api key and user management view:
 ![Alt text](https://lh6.googleusercontent.com/-VomJR6E0ukc/U5OAOJN48TI/AAAAAAAAB9E/fNlT0REb0L4/w2876-h1608-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-07+a%25CC%2580+23.05.42.png "Api key and user management view")
+You can refresh all the api key here. You can also create new users (futur api client) and manage access to your api's admin panel.
+
+![Alt text](https://lh3.googleusercontent.com/mCMUYgYWVeP1H4JAtW9rAsVQkpMj9KpQFWKPjosZi9Q=w1214-h864-p-no "New user view")
+
 
 # Installation
 Here are the differents steps:
