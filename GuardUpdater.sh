@@ -5,6 +5,7 @@ dbHost=127.0.0.1        #Mysql Host name/Ip
 dbUser=user             #Mysql user
 dbPassword=password     #Mysql user's pass
 dbName=sphereguard      #Mysql database name
+hostNumberID=1324       #Unique ID of your watched server
 hddToWatch=/dev/sda     #temp form this hdd
 #############################################
 
@@ -59,11 +60,11 @@ tempHD=${tHD/°C/}
 
 ## SQL REQUEST ###########################
 mysql --host=$dbHost --user=$dbUser --password=$dbPassword $dbName << EOF
-INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('1','${UsedMem}','1',NOW());
-INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('2','${CpuUsage}','1',NOW());
-INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('3','${DiskUsage}','1',NOW());
-INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('4','${tempCPU}','1',NOW());
-INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('5','${tempHD}','1',NOW());
+INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('1','${UsedMem}','${hostNumberID}',NOW());
+INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('2','${CpuUsage}','${hostNumberID}',NOW());
+INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('3','${DiskUsage}','${hostNumberID}',NOW());
+INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('4','${tempCPU}','${hostNumberID}',NOW());
+INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('5','${tempHD}','${hostNumberID}',NOW());
 exit
 EOF
 ##########################################

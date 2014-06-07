@@ -43,7 +43,8 @@ For proper operation you need to edit the "config" section.
 dbHost=127.0.0.1        #Mysql Host name/Ip
 dbUser=user             #Mysql user
 dbPassword=password     #Mysql user's pass
-dbName=sphereguard	    #Mysql database name
+dbName=sphereguard      #Mysql database name
+hostNumberID=1324       #Unique ID of your watched server
 hddToWatch=/dev/sda     #temp form this hdd
 #############################################
 ```
