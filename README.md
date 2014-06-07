@@ -153,6 +153,7 @@ This method return all the server that you're monitoring with the actual hostnam
 #### The call
 
 #####Input parameters: 
+
 *user=[youApiUser]
 *key=[theApiUserKey]
 *function=getAllHosts
@@ -176,7 +177,8 @@ This method return the actual server state by id (hostname, Ip address, cpu usag
 
 #### The call
 
-#####Input parameters: 
+#####Input parameters:
+
 *user=[youApiUser]
 *key=[theApiUserKey]
 *inset=[HostUniqueID]
