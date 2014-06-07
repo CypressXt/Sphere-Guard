@@ -260,7 +260,7 @@ Array
 
 ### getChartByHost
 
-TThis method return information about an host for the last 24 hours (cpu usage, ram usage, disk usage, disk temperature and the statement date).
+This method return information about an host for the last 24 hours (cpu usage, ram usage, disk usage, disk temperature and the statement date).
 
 #### The call
 
