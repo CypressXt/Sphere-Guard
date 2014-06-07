@@ -123,5 +123,12 @@ After having imported this database, create a new user and set him grant on the 
 
 **/!\ Don't forget to set these credentials in the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a> script !**
 
-<a href="https://github.com/CypressXt/Sphere-Guard/blob/master/SphereGuard.sql">SphereGuard.sql</a>
+# API manipulation
 
+You can find here all the syntax and the methods available in the API.
+
+## Available methods
+
+* getAllHosts
+* getInfoByHost
+* getChartByHost
