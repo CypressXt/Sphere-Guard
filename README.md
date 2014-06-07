@@ -26,7 +26,7 @@ You need to install the following linux package on your futur monitored server:
 * hddtemp
 * Mysql-client
 
-### GuardUpdater.sh
+<a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">### GuardUpdater.sh</a>
 This file is a bash script that collect all theses server information
 * CPU usage
 * Ram usage
@@ -47,3 +47,6 @@ dbName=sphereguard	    #Mysql database name
 hddToWatch=/dev/sda     #temp form this hdd
 #############################################
 ```
+
+Now you're ready to use the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a> file.
+You can place this file where you want on your server and set it in your "crontab" file.
