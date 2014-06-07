@@ -143,7 +143,7 @@ This method return all the server that you're monitoring with the actual hostnam
 http://[yourWebServer]/SphereGuard/index.php?l=api&user=[youApiUser]&key=[theApiUserKey]&function=getAllHosts
 ```
 
-#### The result
+#### The JSON result
 
 ```
 [
