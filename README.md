@@ -28,7 +28,7 @@ You can refresh all the api key here. You can also create new users (futur api c
 ## API
  
 | Feature                                                                                                  | Status                |
-| -------------------------------------------------------------------------------------------------------- |:---------------------:|
+| -------------------------------------------------------------------------------------------------------- |:----------------------|
 | Get all you'r watched server (Hostname, IP, actual cpu & ram & disk usage)                               | Operational √         |
 | Get all measures saved by server                                                                         | Operational √         |
 | Get all measures saved by host for last past 24h                                                         | Operational √         |
@@ -37,7 +37,7 @@ You can refresh all the api key here. You can also create new users (futur api c
 ## Admin panel
 
 | Feature                                                                                                  | Status                |
-| -------------------------------------------------------------------------------------------------------- |:---------------------:|
+| -------------------------------------------------------------------------------------------------------- |:----------------------|
 | Manage api users and key:                                                                                | Operational √         |
 | - Refresh a user api's key                                                                               | Operational √         |
 | - delete a api's user                                                                                    | Operational √         |
