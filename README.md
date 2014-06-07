@@ -26,7 +26,7 @@ You can refresh all the api key here. You can also create new users (futur api c
 # Developments in progress
 
 ## API
-* Get all you'r watched server 
+ 
 | Feature                                          | Status        |
 | ------------------------------------------------ |:-------------:|
 | Get all you'r watched server                     | Operational √ |
