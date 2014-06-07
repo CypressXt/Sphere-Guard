@@ -34,9 +34,9 @@ You can follow here the (futur) development of Sphere-Guard
 | Publishing the MySQL database script                                                                     | Not implemented yet X |
 | Document all the api's functions                                                                         | Not implemented yet X |
 | Set up a demo website                                                                                    | Not implemented yet X |
-| Develope a mobile client application (IOS)                                                               | nearly finished   ... |
-| - release the application on the App Store                                                               | Not implemented yet X |
-| - Document the mobile application                                                                        | Not implemented yet X |
+| Develope a mobile client application (IOS):                                                               | nearly finished   ... |
+| -- Release the application on the App Store                                                               | Not implemented yet X |
+| -- Document the mobile application                                                                        | Not implemented yet X |
 | Develope a mobile client application (Android)                                                           | Not implemented yet X |
 
 ## API
@@ -53,15 +53,15 @@ You can follow here the (futur) development of Sphere-Guard
 | Feature                                                                                                  | Status                |
 | :------------------------------------------------------------------------------------------------------- |:----------------------|
 | Manage api users and key:                                                                                | Operational √         |
-| - Refresh a user api's key                                                                               | Operational √         |
-| - delete a api's user                                                                                    | Operational √         |
+| -- Refresh a user api's key                                                                               | Operational √         |
+| -- Delete a api's user                                                                                    | Operational √         |
 | Manage your personnal information                                                                        | Operational √         |
 | Manage your personnal information in AJAX                                                                | Not implemented yet X |
 | Administrator authentication                                                                             | Operational √         |
 | Manage watched hosts:                                                                                    | Not implemented yet X |
-| - Add a watched host                                                                                     | Not implemented yet X |
-| - Remove a watched host                                                                                  | Not implemented yet X |
-| - Manage watched hosts                                                                                   | Not implemented yet X |
+| -- Add a watched host                                                                                     | Not implemented yet X |
+| -- Remove a watched host                                                                                  | Not implemented yet X |
+| -- Manage watched hosts                                                                                   | Not implemented yet X |
 
 
 # Installation
