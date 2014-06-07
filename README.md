@@ -32,7 +32,7 @@ You can follow here the (futur) development of Sphere-Guard
 | Feature                                                                                                  | Status                |
 | :------------------------------------------------------------------------------------------------------- |:----------------------|
 | Publishing the MySQL database script                                                                     | Done √                |
-| Document all the api's functions                                                                         | Not implemented yet X |
+| Document all the api's functions                                                                         | Done √                |
 | Set up a demo website                                                                                    | Not implemented yet X |
 | Develope a mobile client application (IOS):                                                              | nearly finished   ... |
 | -- Release the application on the App Store                                                              | Not implemented yet X |
