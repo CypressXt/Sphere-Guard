@@ -31,14 +31,14 @@ function DisplayUserAndKey($db, $userLogged) {
         $apiArray = $userManager->getAllApi();
         for ($i = 0; $i < count($apiArray); $i++) {
             $currentUser = $apiArray[$i];
-            $html = $html . '<tr>';
+            $html = $html . '<tr id="line' . $currentUser->getPk_api() . '">';
             $html = $html . '<td>' . ($i + 1) . '</td>';
             $html = $html . '<td>' . $currentUser->getName() . '</td>';
             $html = $html . '<td>' . $currentUser->getMail() . '</td>';
-            $html = $html . '<td><input type="text" class="form-control" placeholder="api key" value="' . $currentUser->getKey() . '" disabled></td>';
-            $html = $html . '<td><button type="button" class="btn btn-primary btn-xs">refresh key</button> ';
-            if ($currentUser->getKey() != $userLogged->getKey()) {
-                $html = $html . '<button type="button" class="btn btn-danger btn-xs">remove</button>';
+            $html = $html . '<td><input id="key' . $currentUser->getPk_api() . '" type="text" class="form-control" placeholder="api key" value="' . $currentUser->getKey() . '" disabled></td>';
+            $html = $html . '<td><button type="button" class="btn btn-primary btn-xs" onclick="requestAjaxRefreshKeyUser(\'' . $currentUser->getPk_api() . '\')">refresh key</button> ';
+            if ($currentUser->getPk_api() != $userLogged->getPk_api()) {
+                $html = $html . '<button type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveUser(\'' . $currentUser->getPk_api() . '\')">remove</button>';
             }
             $html = $html . '</td>';
             $html = $html . '</tr>';

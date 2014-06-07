@@ -35,7 +35,8 @@ class UserManager {
         }
     }
 
-    public function updateApi($user) {
+    public function updateApi(User $user) {
+        $isOk = false;
         try {
             $q = $this->db->prepare('UPDATE `api` SET `name` = :name, `password` = :password, `mail` = :mail WHERE `pk_api` = :pkApi');
             $q->bindValue(':name', $user->getName(), PDO::PARAM_STR);
@@ -45,9 +46,11 @@ class UserManager {
             $this->db->beginTransaction();
             $q->execute();
             $this->db->commit();
+            $isOk = true;
         } catch (PDOException $e) {
             $this->db->rollback();
         }
+        return $isOk;
     }
 
     public function getAllApi() {
@@ -66,7 +69,38 @@ class UserManager {
         return $apiArray;
     }
 
-    public function isMailTakenByOther($user, $newMail) {
+    public function refreshKey($userId) {
+        $newKey = "";
+        try {
+            $newKey = sha1(rand());
+            $q = $this->db->prepare('UPDATE `api` SET `key` = :key WHERE `pk_api` = :pkApi');
+            $q->bindValue(':key', $newKey, PDO::PARAM_STR);
+            $q->bindValue(':pkApi', $userId, PDO::PARAM_STR);
+            $this->db->beginTransaction();
+            $q->execute();
+            $this->db->commit();
+        } catch (PDOException $e) {
+            $this->db->rollback();
+        }
+        return $newKey;
+    }
+
+    public function removeApiUser($pk_api) {
+        $isOk = false;
+        try {
+            $q = $this->db->prepare('DELETE FROM `api` WHERE `pk_api` = :pkApi');
+            $q->bindValue(':pkApi', $pk_api, PDO::PARAM_STR);
+            $this->db->beginTransaction();
+            $q->execute();
+            $this->db->commit();
+            $isOk = true;
+        } catch (PDOException $e) {
+            $this->db->rollback();
+        }
+        return $isOk;
+    }
+
+    public function isMailTakenByOther(User $user, $newMail) {
         $q = $this->db->prepare('SELECT * FROM `api` WHERE mail like :mail');
         $q->bindValue(':mail', $newMail, PDO::PARAM_STR);
         $q->execute();

@@ -11,7 +11,7 @@
  *
  * @author CypressXt
  */
-class Api {
+class ApiHandler {
 
     private $_db;
 

@@ -15,7 +15,7 @@ include_once "model/ConnectUtils.php";
 include_once "model/ApiHandler.php";
 
 
-$api = new Api($db);
+$api = new ApiHandler($db);
 $apiKey = $_GET['key'];
 $apiUser = $_GET['user'];
 $function = $_GET['function'];
