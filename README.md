@@ -121,7 +121,7 @@ You can easily create this database using the "SphereGuard.sql" sql script. So j
 
 After having imported this database, create a new user and set him grant on the SphereGuard db. 
 
-**/!\ Don't forget to set these credentials in the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a> script ! /!\**
+**/!\ Don't forget to set these credentials in the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a> script !**
 
 <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/SphereGuard.sql">SphereGuard.sql</a>
 
