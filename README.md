@@ -27,6 +27,18 @@ You can refresh all the api key here. You can also create new users (futur api c
 
 You can follow here the (futur) development of Sphere-Guard
 
+## General development
+
+| Feature                                                                                                  | Status                |
+| :------------------------------------------------------------------------------------------------------- |:----------------------|
+| Publishing the MySQL database script                                                                     | Not implemented yet X |
+| Document all the api's functions                                                                         | Not implemented yet X |
+| Set up a demo website                                                                                    | Not implemented yet X |
+| Develope a mobile client application (IOS)                                                               | nearly finished   ... |
+| - release the application on the App Store                                                               | Not implemented yet X |
+| - Document the mobile application                                                                        | Not implemented yet X |
+| Develope a mobile client application (Android)                                                           | Not implemented yet X |
+
 ## API
  
 | Feature                                                                                                  | Status                |
@@ -97,10 +109,3 @@ Here is an exemple with an update every 15 min:
 ```bash
 */15 *	* * *	root	/home/cypress/SphereGuard/GuardUpdater.sh
 ```
-
-
-## MySQL Database (IN DEVELOPMENT)
-
-A MySQL database is required because the GuardUpdater will store its values ​​obtained during it survey.
-You can easily create this database using the "SphereGuard.sql" sql script. So just use the phpmyadmin "import" fonction or execute it in a MySQL terminal.
-
