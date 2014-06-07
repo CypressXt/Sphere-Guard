@@ -132,3 +132,22 @@ You can find here all the syntax and the methods available in the API.
 * getAllHosts
 * getInfoByHost
 * getChartByHost
+
+### getAllHosts
+
+This method return all the server that you're monitoring with the actual hostname, Ip address, cpu usage, ram usage, disk usage and disk temperature.
+
+#### The call
+
+```
+http://[yourWebServer]/SphereGuard/index.php?l=api&user=[youApiUser]&key=[theApiUserKey]&function=getAllHosts
+```
+
+#### The result
+
+```
+[
+    { "id":"1" ,"name":"Grenth" , "ip":"192.168.1.70", "cpuTemp":"53.0", "usedRam":"100", "usedCpu":"6.5", "diskUsage":"59", "diskTemp":"38"}
+    { "id":"2" ,"name":"Dwayna" , "ip":"192.168.1.72", "cpuTemp":"56.0", "usedRam":"54", "usedCpu":"8.5", "diskUsage":"43", "diskTemp":"38"}
+]
+```
