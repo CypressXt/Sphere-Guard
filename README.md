@@ -3,7 +3,12 @@ Sphere-Guard
 
 System monitoring api &amp; administrative panel
 
+# Readme Index
 
+* [Description](https://github.com/CypressXt/Sphere-Guard#description)
+* [Developments in progress](https://github.com/CypressXt/Sphere-Guard#developments-in-progress)
+* [Installation](https://github.com/CypressXt/Sphere-Guard#installation)
+* [API manipulation](https://github.com/CypressXt/Sphere-Guard#api-manipulation)
 
 # Description
 
