@@ -148,7 +148,7 @@ Alias /SphereGuard	/path/to/your/SphereGuard/directory/
 
 ```
 
-After this, dont forget to create a file in the ```SphereGuard/model/``` directory and call it **MysqlConnect.php** and set in it your MySQL server credential:
+After this, dont forget to create a file in the ```/SphereGuard/model/``` directory and call it **MysqlConnect.php** and set in it your MySQL server credential:
 ```
 <?php
 
