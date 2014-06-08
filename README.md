@@ -42,13 +42,14 @@ You can follow here the (futur) development of Sphere-Guard
 | Manage to get normal volume information (not only lvm volume)                                            | Not implemented yet X |
 
 ## API
- 
+
 | Feature                                                                                                  | Status                |
 | :------------------------------------------------------------------------------------------------------- |:----------------------|
 | Get all you'r watched server (Hostname, IP, actual cpu & ram & disk usage)                               | Operational √         |
 | Get all measures saved by server                                                                         | Operational √         |
 | Get all measures saved by host for last past 24h                                                         | Operational √         |
 | Get all measures saved by host for a chosen period of time                                               | Not implemented yet X |
+| Return getInfoByHost in JSON                                                                             | Not implemented yet X |
 
 ## Admin panel
 
@@ -60,10 +61,11 @@ You can follow here the (futur) development of Sphere-Guard
 | Manage your personnal information                                                                        | Operational √         |
 | Manage your personnal information in AJAX                                                                | Not implemented yet X |
 | Administrator authentication                                                                             | Operational √         |
-| Manage watched hosts:                                                                                    | Not implemented yet X |
-| -- Add a watched host                                                                                    | Not implemented yet X |
-| -- Remove a watched host                                                                                 | Not implemented yet X |
-| -- Manage watched hosts                                                                                  | Not implemented yet X |
+| Manage watched hosts:                                                                                    | Operational √         |
+| -- Add a watched host                                                                                    | Operational √         |
+| -- Remove a watched host                                                                                 | Operational √         |
+| Display some global information about your domain                                                        | Not implemented yet X |
+| Display some statistics about your api's usage                                                           | Not implemented yet X |
 
 
 # Installation
