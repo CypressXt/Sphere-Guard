@@ -9,7 +9,6 @@ include_once 'model/UserManager.php';
 $dashboardContent = file_get_contents('view/Login.php');
 $dashboardError = $_SESSION['SphereGuardError'];
 include_once 'view/ApiDashboard.php';
-$_SESSION['SphereGuardError'] = "";
 checkLogin($db);
 
 function checkLogin($db) {
@@ -22,15 +21,17 @@ function checkLogin($db) {
         if ($userLogged != null && $userLogged->getAdmin() == 1) {
             $_SESSION['SphereGuardLogged'] = serialize($userLogged);
             if (!isset($_SESSION['askedSphereGuard'])) {
+                $_SESSION['SphereGuardError'] = "";
                 header('Location: /SphereGuard/index.php?l=apiDashboard');
             } else {
+                $_SESSION['SphereGuardError'] = "";
+                $_SESSION['askedSphereGuard'] = null;
                 header('Location: /SphereGuard/index.php?l=' . $_SESSION['askedSphereGuard']);
             }
         } else {
+            $_SESSION['SphereGuardError'] = '<div class="alert alert-warning">Wrong login or password</div>';
             if ($userLogged->getAdmin() != 1) {
                 $_SESSION['SphereGuardError'] = '<div class="alert alert-warning">You\'ve no rights here</div>';
-            } else {
-                $_SESSION['SphereGuardError'] = '<div class="alert alert-warning">Wrong login or password</div>';
             }
             header('Location: /SphereGuard/index.php?l=login');
         }

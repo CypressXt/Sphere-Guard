@@ -16,3 +16,5 @@ session_destroy();
 //                         Redirect user after logout                              
 //------------------------------------------------------------------------------
 header('Location: /SphereGuard/');
+session_start();
+$_SESSION['askedSphereGuard'] = "apiDashboard";

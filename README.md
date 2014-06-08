@@ -74,7 +74,7 @@ You can follow here the (futur) development of Sphere-Guard
 | -- Remove a watched host                                                                                 | Operational √         |
 | Display some global information about your domain                                                        | Not implemented yet X |
 | Display some statistics about your api's usage                                                           | Not implemented yet X |
-| First launch wizard                                                                                      | Not implemented yet X |
+| First launch wizard                                                                                      | Operational √         |
 
 ---
 # Installation
@@ -154,25 +154,11 @@ Alias /SphereGuard	/path/to/your/SphereGuard/directory/
 
 ```
 
-After this, dont forget to create a file in the ```/SphereGuard/model/``` directory. 
-Call it **MysqlConnect.php** and set in it your MySQL server credential:
-```
-<?php
+After this, just open the SphereGuard url in your browser and you normally will see this:
 
-try {
-    //## Config ########################
-    $dbHost = "10.10.10.141";           // IP of your MySQL server
-    $dbName = "SphereGuard";            // Name of your database (default: SphereGuard)
-    $dbUser = "guard";                  // Name of your database grant user
-    $dbPassword = "yourDbPassword";     // Password of your database grant user
-    //##################################
-    $db = new PDO('mysql:host='.$dbHost.';dbname=' . $dbName, $dbUser, $dbPassword);
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
-```
+![Alt text](https://lh3.googleusercontent.com/-uenkd-kFxOA/U5SmFQlXs-I/AAAAAAAAB-E/_jszrmFBpTA/w2868-h1612-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-08+a%25CC%2580+20.05.26.png "Install view")
 
-**Save the file and you're done. Your SphereGuard installation is now finished !**
+**Fill the form and you're done. Your SphereGuard installation is now finished !**
 
 If you have any question, remark or advice please let me know.
 Send me a [mail](mailto:cypress@cypressxt.net?Subject=SphereGuard%20github) or create a new [issue](https://github.com/CypressXt/Sphere-Guard/issues/new).

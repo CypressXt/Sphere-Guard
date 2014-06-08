@@ -1,7 +1,13 @@
 <?php
 
 session_start();
-include_once "model/MysqlConnect.php";
+
+
+if (file_exists("model/MysqlConnect.php")) {
+    include_once "model/MysqlConnect.php";
+} else {
+    include_once "controller/cApiInstall.php";
+}
 
 $l = isset($_GET['l']) ? $_GET['l'] : false;
 
