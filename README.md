@@ -68,6 +68,7 @@ You can follow here the (futur) development of Sphere-Guard
 | -- Remove a watched host                                                                                 | Operational √         |
 | Display some global information about your domain                                                        | Not implemented yet X |
 | Display some statistics about your api's usage                                                           | Not implemented yet X |
+| First launch wizard                                                                                      | Not implemented yet X |
 
 
 # Installation
