@@ -166,7 +166,7 @@ try {
 }
 ```
 
-**Save the file and you're done ! Your SphereGuard installation is now finished.**
+**Save the file and you're done. Your SphereGuard installation is now finished !**
 
 If you have any question, remark or advice please let me know.
 Send me a [mail](mailto:cypress@cypressxt.net?Subject=SphereGuard%20github) or create a new [issue](https://github.com/CypressXt/Sphere-Guard/issues/new).
