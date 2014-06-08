@@ -130,8 +130,22 @@ After having imported this database, create a new user and set him grant on the 
 
 ## Web server
 
+Now you're ready to set up the administration panel. You need to have, obviously, a web server available (Apache, Nginx, or whatever).
 
+I'm not an expert of Nginx but here is the apache configuration for running properly the admin area:
 
+This configuration file stay normal (on linux OS) in  ```/etc/apache2/sites-available/yourConfigFileName```
+```
+# You can create an alias for it if you want
+
+Alias /SphereGuard	/path/to/your/SphereGuard/directory/
+
+<Directory /path/to/your/SphereGuard/directory/>
+    Order Allow,Deny
+    Allow from all
+</Directory>
+
+```
 
 
 # API manipulation
