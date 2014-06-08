@@ -20,10 +20,11 @@ function checkLogin($db) {
         $userLogged = $userManager->checkLogin($userName, $password);
         if ($userLogged != null && $userLogged->getAdmin() == 1) {
             $_SESSION['SphereGuardLogged'] = serialize($userLogged);
-            if (!isset($_SESSION['askedSphereGuard'])) {
+            if ($_SESSION['askedSphereGuard'] == "") {
                 $_SESSION['SphereGuardError'] = "";
                 header('Location: /SphereGuard/index.php?l=apiDashboard');
-            } else {
+            }
+            if ($_SESSION['askedSphereGuard'] != "") {
                 $_SESSION['SphereGuardError'] = "";
                 header('Location: /SphereGuard/index.php?l=' . $_SESSION['askedSphereGuard']);
                 $_SESSION['askedSphereGuard'] = null;
