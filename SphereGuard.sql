@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `api` (
 --
 
 INSERT INTO `api` (`pk_api`, `name`, `password`, `mail`, `key`, `admin`) VALUES
-(1, 'Admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'admin@you.tld', 'df10891bfbdbb3b456bbba10d8f1ba6ca87e527c', 1);
+(1, 'Admin', '8be3c943b1609fffbfc51aad666d0a04adf83c9d', 'admin@you.tld', 'df10891bfbdbb3b456bbba10d8f1ba6ca87e527c', 1);
 
 -- --------------------------------------------------------
 
