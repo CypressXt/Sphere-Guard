@@ -166,6 +166,12 @@ try {
 }
 ```
 
+Save the file and you're done ! Your SphereGuard installation is now finished.
+
+If you have any question, remark or advice please let me know. Send me a mail or create a new issue.
+Thanks in advance !
+
+
 # API manipulation
 
 You can find here all the syntax and the methods available in the API.
