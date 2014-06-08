@@ -11,7 +11,7 @@ if (!isset($_SESSION['SphereGuardLogged'])) {
     include_once 'model/User.php';
     $userLogged = unserialize($_SESSION['SphereGuardLogged']);
     $tableRow = displayUserAndKey($db, $userLogged);
-    $modalBody = displayNewUserFrom($db);
+    $modalBody = displayNewHostFrom($db);
     $modalRightButtonText = "Create";
     $modalRightButtonOnclick = "requestAjaxCreateUser($('input[name=inputName]'), $('input[name=inputMail]'), $('input[name=inputPass]'), $('input[name=inputPassConf]'), $('#isAdministrator').is(':checked'))";
     $modalTitle = "New api user";
@@ -58,7 +58,7 @@ function displayUserAndKey($db, $userLogged) {
     }
 }
 
-function displayNewUserFrom($db) {
+function displayNewHostFrom($db) {
     $html = '<form class="form-horizontal" id="newUserForm" role="form" method="POST">
     <div class="form-group">
         <label for="inputName" class="col-sm-2 control-label">Name</label>

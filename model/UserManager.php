@@ -8,15 +8,12 @@ class UserManager {
 
     private $db;
 
-//Constructor
-//-----------
+    //Constructor
+    //-----------
 
     public function __construct($db) {
         $this->setDb($db);
     }
-
-//Setter
-//------
 
     public function setDb(PDO $db) {
         $this->db = $db;

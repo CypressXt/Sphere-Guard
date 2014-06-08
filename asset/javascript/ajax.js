@@ -63,11 +63,65 @@ function requestAjaxCreateUser(name, mail, password, passwordConf, isAdministrat
     });
 }
 
-
 function requestAjaxUpdateUserTable() {
     $.post('/SphereGuard/controller/cAjax.php', {function: "refreshUserTable"}, function(e) {
         if (e !== "") {
             $('#usersTable').html(e);
         }
     });
+}
+
+function requestAjaxCreateHost(name, ipAddr) {
+    var name = name.val();
+    var ipAddr = ipAddr.val();
+    var modalNotif = document.getElementById('modalNotifArea');
+    $.post('/SphereGuard/controller/cAjax.php', {function: "addHost", name: name, ipAddr: ipAddr}, function(e) {
+        if (e === "1") {
+            modalNotif.innerHTML = '<div class = "alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>New api host created successfully !</div>';
+            $('#newHostForm').find(':input').each(function() {
+                switch (this.type) {
+                    case 'password':
+                    case 'select-multiple':
+                    case 'select-one':
+                    case 'text':
+                    case 'email':
+                    case 'textarea':
+                        $(this).val('');
+                        break;
+                    case 'checkbox':
+                    case 'radio':
+                        this.checked = false;
+                }
+            });
+            $('#modalNotifArea').fadeIn(800);
+            requestAjaxUpdatehostTable();
+        } else {
+
+        }
+    });
+}
+
+function requestAjaxUpdatehostTable() {
+    $.post('/SphereGuard/controller/cAjax.php', {function: "refreshHostTable"}, function(e) {
+        if (e !== "") {
+            $('#hostsTable').html(e);
+        }
+    });
+}
+
+function requestAjaxRemoveHost(hostId) {
+    var line = document.getElementById('line' + hostId);
+    if (nbClickRemoveUser === 1) {
+        $.post('/SphereGuard/controller/cAjax.php', {function: "removeApiHost", hostId: hostId}, function(e) {
+            if (e === "1") {
+                $('#line' + hostId).fadeOut(800, function() {
+                    $(this).remove();
+                });
+            }
+        });
+        nbClickRemoveUser = 0;
+    } else {
+        document.getElementById('buttonRemove' + hostId).innerHTML = "Sure ??";
+        nbClickRemoveUser++;
+    }
 }

@@ -16,6 +16,9 @@ switch ($l) {
     case "apiKeyManagement":
         include_once "controller/cApiKeyManagement.php";
         break;
+    case "apiHostsManagement":
+        include_once "controller/cApiHostsManagement.php";
+        break;
     case "login":
         include_once "controller/cLogin.php";
         break;

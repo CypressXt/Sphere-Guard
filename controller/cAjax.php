@@ -12,6 +12,9 @@ session_start();
 include_once "../model/MysqlConnect.php";
 include_once '../model/User.php';
 include_once '../model/UserManager.php';
+include_once '../model/Host.php';
+include_once '../model/HostManager.php';
+
 
 //------------------------------------------------------------------------------
 //                         AJAX PHP FUNCTIONS                            
@@ -64,7 +67,6 @@ if ($_POST['function'] == "addUser" && $_POST['name'] != "" && $_POST['mail'] !=
 
 if ($_POST['function'] == "refreshUserTable") {
     if (isset($_SESSION['SphereGuardLogged'])) {
-        include_once 'model/UserManager.php';
         $userLogged = unserialize($_SESSION['SphereGuardLogged']);
         $userManager = new UserManager($db);
         $apiArray = $userManager->getAllApi();
@@ -93,6 +95,60 @@ if ($_POST['function'] == "refreshUserTable") {
             $html = $html . '</tr>';
         }
         echo $html . '</table>';
+    } else {
+        echo "You need to be logged first";
+    }
+}
+
+if ($_POST['function'] == "addHost" && $_POST['name'] != "" && $_POST['ipAddr'] != "") {
+    if (isset($_SESSION['SphereGuardLogged'])) {
+        $hostManager = new HostManager($db);
+        $hostData = Array(
+            'name' => $_POST['name'],
+            'ip' => $_POST['ipAddr']
+        );
+        $newHost = new Host($hostData);
+        $result = $hostManager->addHost($newHost);
+        echo $result;
+    } else {
+        echo "You need to be logged first";
+    }
+}
+
+if ($_POST['function'] == "refreshHostTable") {
+    if (isset($_SESSION['SphereGuardLogged'])) {
+        $html = '<table id="hostsTable" class="table table-striped">
+            <tr>
+                <th>Unique ID</th>
+                <th>Name</th>
+                <th>IP</th>
+                <th>Action</th>
+            </tr>';
+        $hostManager = new HostManager($db);
+        $hostArray = $hostManager->getAllHosts();
+        for ($i = 0; $i < count($hostArray); $i++) {
+            $currentHost = $hostArray[$i];
+            $html = $html . '<tr id="line' . $currentHost->getPk_host() . '">';
+            $html = $html . '<td>' . $currentHost->getPk_host() . '</td>';
+            $html = $html . '<td>' . $currentHost->getName() . '</td>';
+            $html = $html . '<td>' . $currentHost->getIp() . '</td>';
+            $html = $html . '<td><button id="buttonRemove' . $currentHost->getPk_host() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveHost(\'' . $currentHost->getPk_host() . '\')">Remove host</button> ';
+            $html = $html . '</td>';
+            $html = $html . '</tr>';
+        }
+        $html = $html . '</table>';
+        echo $html;
+    } else {
+        echo "You need to be logged first";
+    }
+}
+
+
+if ($_POST['function'] == "removeApiHost" && $_POST['hostId'] != "") {
+    if (isset($_SESSION['SphereGuardLogged'])) {
+        $hostManager = new HostManager($db);
+        $result = $hostManager->removeHost($_POST['hostId']);
+        echo $result;
     } else {
         echo "You need to be logged first";
     }

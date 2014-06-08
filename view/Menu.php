@@ -7,7 +7,7 @@
     </ul> 
     <div class="MenuSeparator">Settings</div>
     <ul>
-        <li onClick="location.href = '/SphereGuard/index.php?l=#'" class="clearer">Manage Hosts</li>
+        <li onClick="location.href = '/SphereGuard/index.php?l=apiHostsManagement'" class="clearer">Manage Hosts</li>
         <li onClick="location.href = '/SphereGuard/index.php?l=apiKeyManagement'" class="clearer">API Users & API Keys</li>
     </ul>
     <div class="MenuSeparator">My account</div>
