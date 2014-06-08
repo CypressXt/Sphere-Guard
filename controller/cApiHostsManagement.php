@@ -5,7 +5,7 @@
  */
 
 if (!isset($_SESSION['SphereGuardLogged'])) {
-    $_SESSION['askedSphereGuard'] = "apiKeyManagement";
+    $_SESSION['askedSphereGuard'] = "apiHostsManagement";
     header('Location: /SphereGuard/index.php?l=login');
 } else {
     include_once 'model/Host.php';

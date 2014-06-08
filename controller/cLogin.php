@@ -25,8 +25,8 @@ function checkLogin($db) {
                 header('Location: /SphereGuard/index.php?l=apiDashboard');
             } else {
                 $_SESSION['SphereGuardError'] = "";
-                $_SESSION['askedSphereGuard'] = null;
                 header('Location: /SphereGuard/index.php?l=' . $_SESSION['askedSphereGuard']);
+                $_SESSION['askedSphereGuard'] = null;
             }
         } else {
             $_SESSION['SphereGuardError'] = '<div class="alert alert-warning">Wrong login or password</div>';
