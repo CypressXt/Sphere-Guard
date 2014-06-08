@@ -9,7 +9,7 @@ System monitoring api &amp; administrative panel
 * [Developments in progress](https://github.com/CypressXt/Sphere-Guard#developments-in-progress)
 * [Installation](https://github.com/CypressXt/Sphere-Guard#installation)
 * [API manipulation](https://github.com/CypressXt/Sphere-Guard#api-manipulation)
-
+---
 # Description
 
 Sphere-Guard is a simple monitoring tools available with his proper API.
@@ -29,7 +29,7 @@ You can refresh all the api key here. You can also create new users (futur api c
 You can add or remove your watched hosts on this panel.
 ![Alt text](https://lh5.googleusercontent.com/-UfYH11GXTBc/U5R29sjrILI/AAAAAAAAB9w/F_rA-cVoUFI/w2878-h1576-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-08+a%25CC%2580+16.44.17.png "Login view")
 
-
+---
 # Developments in progress
 
 You can follow here the (futur) development of Sphere-Guard
@@ -75,7 +75,7 @@ You can follow here the (futur) development of Sphere-Guard
 | Display some statistics about your api's usage                                                           | Not implemented yet X |
 | First launch wizard                                                                                      | Not implemented yet X |
 
-
+---
 # Installation
 Here are the differents steps:
 
@@ -177,7 +177,7 @@ If you have any question, remark or advice please let me know.
 Send me a [mail](mailto:cypress@cypressxt.net?Subject=SphereGuard%20github) or create a new [issue](https://github.com/CypressXt/Sphere-Guard/issues/new).
 Thanks in advance !
 
-
+---
 # API manipulation
 
 You can find here all the syntax and the methods available in the API.
