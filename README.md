@@ -68,6 +68,7 @@ You can follow here the (futur) development of Sphere-Guard
 | -- Delete a api's user                                                                                   | Operational √         |
 | Manage your personnal information                                                                        | Operational √         |
 | Manage your personnal information in AJAX                                                                | Not implemented yet X |
+| Log in with AJAX                                                                                         | Not implemented yet X |
 | Administrator authentication                                                                             | Operational √         |
 | Manage watched hosts:                                                                                    | Operational √         |
 | -- Add a watched host                                                                                    | Operational √         |
