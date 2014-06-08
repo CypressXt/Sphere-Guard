@@ -16,11 +16,11 @@ This tool can be installed easily on most of the UNIX based OS.
 Here are some screenshot of the API admin panel:
 
 
-Api key and user management view:
+Api key and user management view
 You can refresh all the api key here. You can also create new users (futur api client) and manage access to your api's admin panel.
 ![Alt text](https://lh6.googleusercontent.com/-VomJR6E0ukc/U5OAOJN48TI/AAAAAAAAB9E/fNlT0REb0L4/w2876-h1608-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-07+a%25CC%2580+23.05.42.png "Api key and user management view")
 
-Api host management view:
+Api host management view
 You can add or remove your watched hosts on this panel.
 ![Alt text](https://lh5.googleusercontent.com/-UfYH11GXTBc/U5R29sjrILI/AAAAAAAAB9w/F_rA-cVoUFI/w2878-h1576-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-08+a%25CC%2580+16.44.17.png "Login view")
 
