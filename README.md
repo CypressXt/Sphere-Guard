@@ -148,6 +148,22 @@ Alias /SphereGuard	/path/to/your/SphereGuard/directory/
 
 ```
 
+After this, dont forget to create a file in the ```SphereGuard/model/``` directory and call it **MysqlConnect.php** and set in it your MySQL server credential:
+```
+<?php
+
+try {
+    //## Config ########################
+    $dbHost = "10.10.10.141";           // IP of your MySQL server
+    $dbName = "SphereGuard";            // Name of your database (default: SphereGuard)
+    $dbUser = "guard";                  // Name of your database grant user
+    $dbPassword = "yourDbPassword";     // Password of your database grant user
+    //##################################
+    $db = new PDO('mysql:host='.$dbHost.';dbname=' . $dbName, $dbUser, $dbPassword);
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+```
 
 # API manipulation
 
