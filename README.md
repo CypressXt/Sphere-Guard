@@ -158,7 +158,7 @@ After this, just open the SphereGuard url in your browser and you normally will 
 
 ![Alt text](https://lh3.googleusercontent.com/-uenkd-kFxOA/U5SmFQlXs-I/AAAAAAAAB-E/_jszrmFBpTA/w2868-h1612-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-08+a%25CC%2580+20.05.26.png "Install view")
 
-**Fill the form and you're done.**
+Fill the form and you're done.
 
 You can log in with these credential:
 
