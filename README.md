@@ -41,7 +41,7 @@ You can follow here the (futur) development of Sphere-Guard
 | :------------------------------------------------------------------------------------------------------- |:----------------------|
 | Publishing the MySQL database script                                                                     | Done √                |
 | Document all the api's functions                                                                         | Done √                |
-| Set up a demo website                                                                                    | Not implemented yet X |
+| Set up a demo website                                                                                    | Done √                |
 | Develope a mobile client application (IOS):                                                              | nearly finished   ... |
 | -- Release the application on the App Store                                                              | Not implemented yet X |
 | -- Document the mobile application                                                                       | Not implemented yet X |
