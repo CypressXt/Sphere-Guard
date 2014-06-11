@@ -100,7 +100,6 @@ I'm not an expert of Nginx but here is the apache configuration for running prop
 
 This configuration file stay normal (on linux OS) in  ```/etc/apache2/sites-available/yourConfigFileName```
 ```
-# You can create an alias for it if you want
 
 Alias /SphereGuard	/path/to/your/SphereGuard/directory/
 
