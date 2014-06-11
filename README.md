@@ -158,7 +158,7 @@ hddToWatch=/dev/sda     #temp form this hdd
 #############################################
 ```
 
-You can find your host unique ID in the "Manage hosts" section on your admin panel.
+You can find your host unique ID in the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/README.md#api-host-management-view">"Manage hosts"</a> section on your admin panel.
 
 Now you're ready to use the <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">GuardUpdater.sh</a> file.
 You can place this file where you want on your server and set it in your "crontab" file.
