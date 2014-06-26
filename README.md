@@ -177,5 +177,5 @@ Thanks in advance !
 ---
 # API manipulation
 
-You can find <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/GuardUpdater.sh">here</a> all the syntax and the methods available in the API.
+You can find <a href="https://github.com/CypressXt/Sphere-Guard/blob/master/README_API.md">here</a> all the syntax and the methods available in the API.
 
