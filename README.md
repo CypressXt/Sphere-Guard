@@ -33,51 +33,8 @@ You can add or remove your watched hosts on this panel.
 ---
 # Developments in progress
 
-You can follow here the (futur) development of Sphere-Guard
+You can <a href="https://github.com/CypressXt/Sphere-Guard/wiki/Upcoming-development">follow here</a> the (futur) development of Sphere-Guard
 
-## General development
-
-| Feature                                                                                                  | Status                |
-| :------------------------------------------------------------------------------------------------------- |:----------------------|
-| Publishing the MySQL database script                                                                     | Done √                |
-| Document all the api's functions                                                                         | Done √                |
-| Set up a demo website                                                                                    | Done √                |
-| Develope a mobile client application (IOS):                                                              | nearly finished   ... |
-| -- Release the application on the App Store                                                              | Not implemented yet X |
-| -- Document the mobile application                                                                       | Not implemented yet X |
-| Develope a mobile client application (Android)                                                           | Not implemented yet X |
-| Develope a mobile client application (Windows Phone)                                                     | Not implemented yet X |
-| Manage to get normal volume information (not only lvm volume)                                            | Not implemented yet X |
-
-## API
-
-| Feature                                                                                                  | Status                |
-| :------------------------------------------------------------------------------------------------------- |:----------------------|
-| Get all you'r watched server (Hostname, IP, actual cpu & ram & disk usage)                               | Operational √         |
-| Get all measures saved by server                                                                         | Operational √         |
-| Get all measures saved by host for last past 24h                                                         | Operational √         |
-| Get all measures saved by host for a chosen period of time                                               | Not implemented yet X |
-| Return getInfoByHost in JSON                                                                             | Operational √         |
-
-## Admin panel
-
-| Feature                                                                                                  | Status                |
-| :------------------------------------------------------------------------------------------------------- |:----------------------|
-| Manage api users and key:                                                                                | Operational √         |
-| -- Refresh a user api's key                                                                              | Operational √         |
-| -- Delete a api's user                                                                                   | Operational √         |
-| Manage your personnal information                                                                        | Operational √         |
-| Manage your personnal information in AJAX                                                                | Not implemented yet X |
-| Log in with AJAX                                                                                         | Not implemented yet X |
-| Administrator authentication                                                                             | Operational √         |
-| Manage watched hosts:                                                                                    | Operational √         |
-| -- Add a watched host                                                                                    | Operational √         |
-| -- Remove a watched host                                                                                 | Operational √         |
-| Display some global information about your domain                                                        | Not implemented yet X |
-| Display some statistics about your api's usage                                                           | Not implemented yet X |
-| First launch wizard                                                                                      | Operational √         |
-
----
 # Installation
 Here are the differents steps:
 
