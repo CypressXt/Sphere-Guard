@@ -31,7 +31,7 @@ You can add or remove your watched hosts on this panel.
 ![Alt text](https://lh5.googleusercontent.com/-UfYH11GXTBc/U5R29sjrILI/AAAAAAAAB9w/F_rA-cVoUFI/w2878-h1576-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-08+a%25CC%2580+16.44.17.png "Login view")
 
 ---
-# Developments in progress
+# Upcoming Development
 
 You can <a href="https://github.com/CypressXt/Sphere-Guard/wiki/Upcoming-development">follow here</a> the (futur) development of Sphere-Guard
 
