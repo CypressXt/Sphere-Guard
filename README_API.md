@@ -1,9 +1,3 @@
-Sphere-Guard
-============
-
-System monitoring api &amp; administrative panel
-
-
 # API manipulation
 
 You can find here all the syntax and the methods available in the API.
