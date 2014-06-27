@@ -63,7 +63,7 @@ This method return the actual server state by id (hostname, Ip address, cpu usag
 http://[yourWebServer]/SphereGuard/index.php?l=api&user=[youApiUser]&key=[theApiUserKey]&function=getInfoByHost&inset=[HostUniqueID]
 ```
 
-#### The result
+#### The JSON result
 
 ```
 {
