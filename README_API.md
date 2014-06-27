@@ -69,72 +69,81 @@ This method return the actual server state by id (hostname, Ip address, cpu usag
 http://[yourWebServer]/SphereGuard/index.php?l=api&user=[youApiUser]&key=[theApiUserKey]&function=getInfoByHost&inset=[HostUniqueID]
 ```
 
-#### The result (NOT JSON !! will be updated soon)
+#### The result
 
 ```
-Array
-(
-    [0] => Array
-        (
-            [pk_performance] => 81103
-            [fk_type] => 1
-            [value] => 100
-            [fk_host] => 1
-            [date] => 2014-06-08 00:45:02
-            [pk_type] => 1
-            [name] => Used RAM
-            [unit] => %
-        )
-
-    [1] => Array
-        (
-            [pk_performance] => 81104
-            [fk_type] => 2
-            [value] => 13
-            [fk_host] => 1
-            [date] => 2014-06-08 00:45:02
-            [pk_type] => 2
-            [name] => Cpu usage
-            [unit] => %
-        )
-
-    [2] => Array
-        (
-            [pk_performance] => 81105
-            [fk_type] => 3
-            [value] => 59
-            [fk_host] => 1
-            [date] => 2014-06-08 00:45:02
-            [pk_type] => 3
-            [name] => Disk usage
-            [unit] => %
-        )
-
-    [3] => Array
-        (
-            [pk_performance] => 81106
-            [fk_type] => 4
-            [value] => 53.0
-            [fk_host] => 1
-            [date] => 2014-06-08 00:45:02
-            [pk_type] => 4
-            [name] => cpuTemp
-            [unit] => °C
-        )
-
-    [4] => Array
-        (
-            [pk_performance] => 81107
-            [fk_type] => 5
-            [value] => 38
-            [fk_host] => 1
-            [date] => 2014-06-08 00:45:02
-            [pk_type] => 5
-            [name] => hddTemp
-            [unit] => °C
-        )
-
-)
+{
+    "cpuUsage": [
+        {
+            "value": "13.1"
+        },
+        {
+            "unit": "%"
+        },
+        {
+            "date": "2014-06-28 00:15:02"
+        },
+        {
+            "hostID": "1"
+        }
+    ],
+    "cpuTemp": [
+        {
+            "value": "53.0"
+        },
+        {
+            "unit": "°C"
+        },
+        {
+            "date": "2014-06-28 00:15:02"
+        },
+        {
+            "hostID": "1"
+        }
+    ],
+    "ramUsage": [
+        {
+            "value": "100"
+        },
+        {
+            "unit": "%"
+        },
+        {
+            "date": "2014-06-28 00:15:02"
+        },
+        {
+            "hostID": "1"
+        }
+    ],
+    "diskUsage": [
+        {
+            "value": "59"
+        },
+        {
+            "unit": "%"
+        },
+        {
+            "date": "2014-06-28 00:15:02"
+        },
+        {
+            "hostID": "1"
+        }
+    ],
+    "diskTemp": [
+        {
+            "value": "37"
+        },
+        {
+            "unit": "°C"
+        },
+        {
+            "date": "2014-06-28 00:15:02"
+        },
+        {
+            "hostID": "1"
+        }
+    ]
+}
 ```
 
 

@@ -152,4 +152,76 @@ class ApiHandler {
         return $result . "}";
     }
 
+    public function formatInfoByHostData($chartInfo) {
+        $npCpuUsage = 0;
+        $npCpuTemp = 0;
+        $npRam = 0;
+        $npDiskUsage = 0;
+        $npDiskTemp = 0;
+        $npDate = 0;
+
+        $result = "{";
+        $cpu = '"cpuUsage" : [';
+        $cpuTemp = '"cpuTemp" : [';
+        $ram = '"ramUsage" : [';
+        $diskUsage = '"diskUsage" : [';
+        $diskTemp = '"diskTemp" : [';
+        for ($i = 0; $i < count($chartInfo); $i++) {
+            if ($chartInfo[$i]["name"] == "Cpu usage") {
+                $npCpuUsage++;
+                if ($npCpuUsage != 1) {
+                    $cpu = $cpu . ',';
+                }
+                $cpu = $cpu . ' { "value":"' . $chartInfo[$i]["value"] . '" },';
+                $cpu = $cpu . ' { "unit":"' . $chartInfo[$i]["unit"] . '" },';
+                $cpu = $cpu . ' { "date":"' . $chartInfo[$i]["date"] . '" },';
+                $cpu = $cpu . ' { "hostID":"' . $chartInfo[$i]["fk_host"] . '" }';
+            } else if ($chartInfo[$i]["name"] == "cpuTemp") {
+                $npCpuTemp++;
+                if ($npCpuTemp != 1) {
+                    $cpuTemp = $cpuTemp . ',';
+                }
+                $cpuTemp = $cpuTemp . ' { "value":"' . $chartInfo[$i]["value"] . '" },';
+                $cpuTemp = $cpuTemp . ' { "unit":"' . $chartInfo[$i]["unit"] . '" },';
+                $cpuTemp = $cpuTemp . ' { "date":"' . $chartInfo[$i]["date"] . '" },';
+                $cpuTemp = $cpuTemp . ' { "hostID":"' . $chartInfo[$i]["fk_host"] . '" }';
+            } else if ($chartInfo[$i]["name"] == "Used RAM") {
+                $npRam++;
+                if ($npRam != 1) {
+                    $ram = $ram . ',';
+                }
+                $ram = $ram . ' { "value":"' . $chartInfo[$i]["value"] . '" },';
+                $ram = $ram . ' { "unit":"' . $chartInfo[$i]["unit"] . '" },';
+                $ram = $ram . ' { "date":"' . $chartInfo[$i]["date"] . '" },';
+                $ram = $ram . ' { "hostID":"' . $chartInfo[$i]["fk_host"] . '" }';
+            } else if ($chartInfo[$i]["name"] == "Disk usage") {
+                $npDiskUsage++;
+                if ($npDiskUsage != 1) {
+                    $diskUsage = $diskUsage . ',';
+                }
+                $diskUsage = $diskUsage . ' { "value":"' . $chartInfo[$i]["value"] . '" },';
+                $diskUsage = $diskUsage . ' { "unit":"' . $chartInfo[$i]["unit"] . '" },';
+                $diskUsage = $diskUsage . ' { "date":"' . $chartInfo[$i]["date"] . '" },';
+                $diskUsage = $diskUsage . ' { "hostID":"' . $chartInfo[$i]["fk_host"] . '" }';
+            } else if ($chartInfo[$i]["name"] == "hddTemp") {
+                $npDiskTemp++;
+                if ($npDiskTemp != 1) {
+                    $diskTemp = $diskTemp . ',';
+                }
+                $diskTemp = $diskTemp . ' { "value":"' . $chartInfo[$i]["value"] . '" },';
+                $diskTemp = $diskTemp . ' { "unit":"' . $chartInfo[$i]["unit"] . '" },';
+                $diskTemp = $diskTemp . ' { "date":"' . $chartInfo[$i]["date"] . '" },';
+                $diskTemp = $diskTemp . ' { "hostID":"' . $chartInfo[$i]["fk_host"] . '" }';
+            }
+        }
+        $cpu = $cpu . '],';
+        $cpuTemp = $cpuTemp . '],';
+        $ram = $ram . '],';
+        $diskUsage = $diskUsage . '],';
+        $diskTemp = $diskTemp . ']';
+
+        $result = $result . $cpu . $cpuTemp . $ram . $diskUsage . $diskTemp;
+        return $result . "}";
+    }
+
 }

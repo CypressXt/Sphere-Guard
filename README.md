@@ -57,7 +57,7 @@ You can follow here the (futur) development of Sphere-Guard
 | Get all measures saved by server                                                                         | Operational √         |
 | Get all measures saved by host for last past 24h                                                         | Operational √         |
 | Get all measures saved by host for a chosen period of time                                               | Not implemented yet X |
-| Return getInfoByHost in JSON                                                                             | Not implemented yet X |
+| Return getInfoByHost in JSON                                                                             | Operational √         |
 
 ## Admin panel
 
