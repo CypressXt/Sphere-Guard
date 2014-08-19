@@ -141,7 +141,9 @@ td{
     margin-bottom: 4px;
     margin-top: 4px;
     padding: 1px;
-    background-color: #e0e0e0;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #e3e3e3;
     font-size: 14px;
     border-radius: 6px;
 }
