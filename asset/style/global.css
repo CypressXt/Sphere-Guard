@@ -79,7 +79,8 @@ body{
 
 .dashBoard{
     margin-top: 50px;
-    height: 90%;
+    min-height: 90%;
+    margin-bottom: 50px;
     background-color: #f0f1f3;
     padding: 2em;
     color: black;
@@ -121,4 +122,9 @@ td{
 
 .navbar-toggle .icon-bar{
     background-color: #428bca; 
+}
+
+.panelHead{
+    font-size: 22px;
+    margin-bottom: 10px;
 }

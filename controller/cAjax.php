@@ -14,7 +14,8 @@ include_once '../model/User.php';
 include_once '../model/UserManager.php';
 include_once '../model/Host.php';
 include_once '../model/HostManager.php';
-
+include_once '../model/HtmlDisplayer.php';
+$userLogged = unserialize($_SESSION['SphereGuardLogged']);
 
 //------------------------------------------------------------------------------
 //                         AJAX PHP FUNCTIONS                            
@@ -67,34 +68,9 @@ if ($_POST['function'] == "addUser" && $_POST['name'] != "" && $_POST['mail'] !=
 
 if ($_POST['function'] == "refreshUserTable") {
     if (isset($_SESSION['SphereGuardLogged'])) {
-        $userLogged = unserialize($_SESSION['SphereGuardLogged']);
-        $userManager = new UserManager($db);
-        $apiArray = $userManager->getAllApi();
-        $html = '<table id="usersTable" class="table table-striped">
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Mail</th>
-                <th>Key</th>
-                <th>Action</th>
-            </tr>';
-        for ($i = 0; $i < count($apiArray); $i++) {
-            $currentUser = $apiArray[$i];
-            $html = $html . '<tr id="line' . $currentUser->getPk_api() . '">';
-            $html = $html . '<td>' . ($i + 1) . '</td>';
-            $html = $html . '<td>' . $currentUser->getName() . '</td>';
-            $html = $html . '<td>' . $currentUser->getMail() . '</td>';
-            $html = $html . '<td><input id="key' . $currentUser->getPk_api() . '" type="text" class="form-control" placeholder="api key" value="' . $currentUser->getKey() . '" disabled></td>';
-            $html = $html . '<td><button type="button" class="btn btn-primary btn-xs" onclick="requestAjaxRefreshKeyUser(\'' . $currentUser->getPk_api() . '\')">refresh key</button> ';
-            if ($currentUser->getPk_api() != $userLogged->getPk_api()) {
-                $html = $html . '<button id="buttonRemove' . $currentUser->getPk_api() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveUser(\'' . $currentUser->getPk_api() . '\')">remove</button>';
-            } else {
-                $html = $html . '<button id="buttonRemove' . $currentUser->getPk_api() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveUser(\'' . $currentUser->getPk_api() . '\')" disabled>remove</button>';
-            }
-            $html = $html . '</td>';
-            $html = $html . '</tr>';
-        }
-        echo $html . '</table>';
+        $html = htmlDisplayer::displayUserTable($db, $userLogged);
+        $html .= htmlDisplayer::displayUserTableRespon($db, $userLogged);
+        echo $html;
     } else {
         echo "You need to be logged first";
     }
@@ -117,26 +93,8 @@ if ($_POST['function'] == "addHost" && $_POST['name'] != "" && $_POST['ipAddr'] 
 
 if ($_POST['function'] == "refreshHostTable") {
     if (isset($_SESSION['SphereGuardLogged'])) {
-        $html = '<table id="hostsTable" class="table table-striped">
-            <tr>
-                <th>Unique ID</th>
-                <th>Name</th>
-                <th>IP</th>
-                <th>Action</th>
-            </tr>';
-        $hostManager = new HostManager($db);
-        $hostArray = $hostManager->getAllHosts();
-        for ($i = 0; $i < count($hostArray); $i++) {
-            $currentHost = $hostArray[$i];
-            $html = $html . '<tr id="line' . $currentHost->getPk_host() . '">';
-            $html = $html . '<td>' . $currentHost->getPk_host() . '</td>';
-            $html = $html . '<td>' . $currentHost->getName() . '</td>';
-            $html = $html . '<td>' . $currentHost->getIp() . '</td>';
-            $html = $html . '<td><button id="buttonRemove' . $currentHost->getPk_host() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveHost(\'' . $currentHost->getPk_host() . '\')">Remove host</button> ';
-            $html = $html . '</td>';
-            $html = $html . '</tr>';
-        }
-        $html = $html . '</table>';
+        $html = htmlDisplayer::displayHostTable($db, $userLogged);
+        $html .= htmlDisplayer::displayHostTableRespon($db, $userLogged);
         echo $html;
     } else {
         echo "You need to be logged first";

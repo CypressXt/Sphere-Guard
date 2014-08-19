@@ -12,11 +12,15 @@ function requestAjaxRemoveUser(userId) {
                 $('#line' + userId).fadeOut(800, function() {
                     $(this).remove();
                 });
+                $('#lineResp' + userId).fadeOut(800, function() {
+                    $(this).remove();
+                });
             }
         });
         nbClickRemoveUser = 0;
     } else {
         document.getElementById('buttonRemove' + userId).innerHTML = "Sure ??";
+        document.getElementById('buttonRemoveResp' + userId).innerHTML = "Sure ??";
         nbClickRemoveUser++;
     }
 }
@@ -66,7 +70,8 @@ function requestAjaxCreateUser(name, mail, password, passwordConf, isAdministrat
 function requestAjaxUpdateUserTable() {
     $.post('/SphereGuard/controller/cAjax.php', {function: "refreshUserTable"}, function(e) {
         if (e !== "") {
-            $('#usersTable').html(e);
+            console.log(e);
+            $('#userArea').html(e);
         }
     });
 }
@@ -104,17 +109,19 @@ function requestAjaxCreateHost(name, ipAddr) {
 function requestAjaxUpdatehostTable() {
     $.post('/SphereGuard/controller/cAjax.php', {function: "refreshHostTable"}, function(e) {
         if (e !== "") {
-            $('#hostsTable').html(e);
+            $('#hostArea').html(e);
         }
     });
 }
 
 function requestAjaxRemoveHost(hostId) {
-    var line = document.getElementById('line' + hostId);
     if (nbClickRemoveUser === 1) {
         $.post('/SphereGuard/controller/cAjax.php', {function: "removeApiHost", hostId: hostId}, function(e) {
             if (e === "1") {
                 $('#line' + hostId).fadeOut(800, function() {
+                    $(this).remove();
+                });
+                $('#lineResp' + hostId).fadeOut(800, function() {
                     $(this).remove();
                 });
             }
@@ -122,6 +129,7 @@ function requestAjaxRemoveHost(hostId) {
         nbClickRemoveUser = 0;
     } else {
         document.getElementById('buttonRemove' + hostId).innerHTML = "Sure ??";
+        document.getElementById('buttonRemoveResp' + hostId).innerHTML = "Sure ??";
         nbClickRemoveUser++;
     }
 }

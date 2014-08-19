@@ -8,7 +8,7 @@ $dashboardContent = '
 <div class="page-header">
     <h1>Api Key & User management</h1>
 </div>
-<div>
-    ' . $tableRow . '
+<div id="userArea">
+    ' . $tableRow . $tableRowResp . '
 </div>';
 ?>
