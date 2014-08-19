@@ -138,8 +138,9 @@ td{
 }
 
 .keyNum{
-    width: 80%;
-    word-break: break-all;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    padding: 1px;
     background-color: #e0e0e0;
     font-size: 14px;
     border-radius: 6px;

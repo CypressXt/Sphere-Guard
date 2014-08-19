@@ -113,7 +113,7 @@ class htmlDisplayer {
                         <div class="panel-body">
                           Name: <div class="panelHead">' . $currentUser->getName() . '</div>
                           <p>Email: ' . $currentUser->getMail() . '</p></br>
-                          <div class="keyPar">Key: <div class="keyNum">' . $currentUser->getKey() . '</div></div>
+                          <div class="keyPar">Key: <span class="keyNum">' . $currentUser->getKey() . '</span></div>
                           ';
                 if ($currentUser->getPk_api() != $userLogged->getPk_api()) {
                     $html .= '<button id="buttonRemoveResp' . $currentUser->getPk_api() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveUser(\'' . $currentUser->getPk_api() . '\')">remove</button>';
