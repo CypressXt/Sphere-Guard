@@ -125,6 +125,22 @@ td{
 }
 
 .panelHead{
-    font-size: 22px;
+    font-size: 25px;
     margin-bottom: 10px;
+}
+
+.panel-body{
+    word-wrap: break-word;
+}
+
+.keyPar{
+    margin-bottom: 1em;
+}
+
+.keyNum{
+    width: 80%;
+    word-break: break-all;
+    background-color: #e0e0e0;
+    font-size: 14px;
+    border-radius: 6px;
 }

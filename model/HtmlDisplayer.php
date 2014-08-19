@@ -48,13 +48,13 @@ class htmlDisplayer {
             for ($i = 0; $i < count($hostArray); $i++) {
                 $currentHost = $hostArray[$i];
                 $html .= '<div class="panel panel-default hidden-md hidden-lg" id="lineResp' . $currentHost->getPk_host() . '">
-                        <div class="panel-body">
-                          <div class="panelHead">' . $currentHost->getName() . '</div>
-                          Unique ID <span class="badge">' . $currentHost->getPk_host() . '</span></br>
-                          ip ' . $currentHost->getIp() . '</br></br>
-                          <button id="buttonRemoveResp' . $currentHost->getPk_host() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveHost(\'' . $currentHost->getPk_host() . '\')">Remove host</button>
-                        </div>
-                      </div>';
+                            <div class="panel-body">
+                              <div class="panelHead">' . $currentHost->getName() . '</div>
+                              Unique ID: <span class="badge">' . $currentHost->getPk_host() . '</span></br>
+                              Ip: ' . $currentHost->getIp() . '</br></br>
+                              <button id="buttonRemoveResp' . $currentHost->getPk_host() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveHost(\'' . $currentHost->getPk_host() . '\')">Remove host</button>
+                            </div>
+                          </div>';
             }
             $html = $html . '<button class="btn btn-primary btn-sm hidden-md hidden-lg" data-toggle="modal" data-target="#modal">Add new host</button>';
             return $html;
@@ -65,7 +65,7 @@ class htmlDisplayer {
     }
 
     public static function displayUserTable($db, $userLogged) {
-        $html = '<div class="table-responsive"><table id="usersTable" class="table table-striped hidden-xs hidden-sm">
+        $html = '<table id="usersTable" class="table table-striped hidden-xs hidden-sm">
             <tr>
                 <th>#</th>
                 <th>Name</th>
@@ -93,7 +93,7 @@ class htmlDisplayer {
                 $html = $html . '</td>';
                 $html = $html . '</tr>';
             }
-            $html = $html . '</table></div>';
+            $html = $html . '</table>';
             $html = $html . '<button class="btn btn-primary btn-sm hidden-xs hidden-sm" data-toggle="modal" data-target="#modal">Add new user & key</button>';
             return $html;
         } else {
@@ -111,9 +111,9 @@ class htmlDisplayer {
                 $currentUser = $apiArray[$i];
                 $html .= '<div class="panel panel-default hidden-md hidden-lg" id="lineResp' . $currentUser->getPk_api() . '">
                         <div class="panel-body">
-                          <div class="panelHead">' . $currentUser->getName() . '</div>
-                          Email: ' . $currentUser->getMail() . '</br>
-                          key: ' . $currentUser->getKey() . '</br></br>
+                          Name: <div class="panelHead">' . $currentUser->getName() . '</div>
+                          <p>Email: ' . $currentUser->getMail() . '</p></br>
+                          <div class="keyPar">Key: <div class="keyNum">' . $currentUser->getKey() . '</div></div>
                           ';
                 if ($currentUser->getPk_api() != $userLogged->getPk_api()) {
                     $html .= '<button id="buttonRemoveResp' . $currentUser->getPk_api() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveUser(\'' . $currentUser->getPk_api() . '\')">remove</button>';
