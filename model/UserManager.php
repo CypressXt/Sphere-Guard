@@ -35,7 +35,7 @@ class UserManager {
     public function addApi(User $user) {
         $isOk = false;
         try {
-            $q = $this->db->prepare('INSERT INTO `api`(`name`, `password`, `mail`, `key`, `admin`) VALUES (:name,:password,:mail,:key,:admin)');
+            $q = $this->db->prepare('INSERT INTO `api`(`name`, `password`, `mail`, `apikey`, `admin`) VALUES (:name,:password,:mail,:key,:admin)');
             $q->bindValue(':name', $user->getName(), PDO::PARAM_STR);
             $q->bindValue(':password', sha1($user->getPassword()), PDO::PARAM_STR);
             $q->bindValue(':mail', $user->getMail(), PDO::PARAM_STR);
@@ -89,7 +89,7 @@ class UserManager {
         $newKey = "";
         try {
             $newKey = sha1(rand());
-            $q = $this->db->prepare('UPDATE `api` SET `key` = :key WHERE `pk_api` = :pkApi');
+            $q = $this->db->prepare('UPDATE `api` SET `apikey` = :key WHERE `pk_api` = :pkApi');
             $q->bindValue(':key', $newKey, PDO::PARAM_STR);
             $q->bindValue(':pkApi', $userId, PDO::PARAM_STR);
             $this->db->beginTransaction();

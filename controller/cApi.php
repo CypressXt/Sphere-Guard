@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of cApi
  *
@@ -20,19 +14,23 @@ $apiKey = $_GET['key'];
 $apiUser = $_GET['user'];
 $function = $_GET['function'];
 $inset = $_GET['inset'];
-
 if ($api->checkApiKey($apiKey, $apiUser)) {
     switch ($function) {
         case "getAllHosts":
             echo $api->joinHostAndInfo($api->getAllHosts());
+            $api->incrApiCall($apiUser);
             break;
         case "getInfoByHost":
             $data = $api->getInfoByHost($inset);
             print_r($api->formatInfoByHostData($data));
+            $api->incrApiCall($apiUser);
             break;
         case "getChartByHost":
             $chartData = $api->getChartByHost($inset);
             print_r($api->formatChartData($chartData));
+            $api->incrApiCall($apiUser);
             break;
     }
+} else {
+    echo "invalid api credentials";
 }

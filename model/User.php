@@ -10,7 +10,8 @@ class User {
     private $name;
     private $password;
     private $mail;
-    private $key;
+    private $apikey;
+    private $nbCall;
     private $admin;
 
     //Constructor
@@ -38,8 +39,12 @@ class User {
         return $this->mail;
     }
 
-    public function getKey() {
-        return $this->key;
+    public function getApikey() {
+        return $this->apikey;
+    }
+
+    public function getNbCall() {
+        return $this->nbCall;
     }
 
     public function getAdmin() {
@@ -66,8 +71,12 @@ class User {
         $this->mail = $mail;
     }
 
-    public function setKey($key) {
-        $this->key = $key;
+    public function setApikey($apiKey) {
+        $this->apikey = $apiKey;
+    }
+
+    public function setNbCall($nbCall) {
+        $this->nbCall = $nbCall;
     }
 
     public function setAdmin($admin) {

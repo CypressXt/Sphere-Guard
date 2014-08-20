@@ -28,7 +28,7 @@ class ApiHandler {
 
     public function checkApiKey($apiKey, $apiUser) {
         $result = false;
-        $q = $this->_db->prepare('SELECT * FROM api WHERE name =:name AND api.key =:key');
+        $q = $this->_db->prepare('SELECT * FROM api WHERE name =:name AND apikey =:key');
         $q->bindValue(':name', $apiUser, PDO::PARAM_STR);
         $q->bindValue(':key', $apiKey, PDO::PARAM_STR);
         $q->execute();
@@ -222,6 +222,12 @@ class ApiHandler {
 
         $result = $result . $cpu . $cpuTemp . $ram . $diskUsage . $diskTemp;
         return $result . "}";
+    }
+
+    public function incrApiCall($apiUser) {
+        $q = $this->_db->prepare('UPDATE `api` SET nbCall = nbCall + 1 WHERE `name` like :name');
+        $q->bindValue(':name', $apiUser, PDO::PARAM_STR);
+        $q->execute();
     }
 
 }

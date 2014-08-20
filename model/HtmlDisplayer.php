@@ -83,7 +83,7 @@ class htmlDisplayer {
                 $html = $html . '<td>' . ($i + 1) . '</td>';
                 $html = $html . '<td>' . $currentUser->getName() . '</td>';
                 $html = $html . '<td>' . $currentUser->getMail() . '</td>';
-                $html = $html . '<td><input id="key' . $currentUser->getPk_api() . '" type="text" class="form-control" placeholder="api key" value="' . $currentUser->getKey() . '" disabled></td>';
+                $html = $html . '<td><input id="key' . $currentUser->getPk_api() . '" type="text" class="form-control" placeholder="api key" value="' . $currentUser->getApikey() . '" disabled></td>';
                 $html = $html . '<td><button type="button" class="btn btn-primary btn-xs" onclick="requestAjaxRefreshKeyUser(\'' . $currentUser->getPk_api() . '\')">refresh key</button> ';
                 if ($currentUser->getPk_api() != $userLogged->getPk_api()) {
                     $html = $html . '<button id="buttonRemove' . $currentUser->getPk_api() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveUser(\'' . $currentUser->getPk_api() . '\')">remove</button>';
@@ -113,7 +113,7 @@ class htmlDisplayer {
                         <div class="panel-body">
                           Name: <div class="panelHead">' . $currentUser->getName() . '</div>
                           <p>Email: ' . $currentUser->getMail() . '</p></br>
-                          <div class="keyPar">Key: <span class="keyNum">' . $currentUser->getKey() . '</span></div>
+                          <div class="keyPar">Key: <span class="keyNum">' . $currentUser->getApikey() . '</span></div>
                           ';
                 if ($currentUser->getPk_api() != $userLogged->getPk_api()) {
                     $html .= '<button id="buttonRemoveResp' . $currentUser->getPk_api() . '" type="button" class="btn btn-danger btn-xs" onclick="requestAjaxRemoveUser(\'' . $currentUser->getPk_api() . '\')">remove</button>';
