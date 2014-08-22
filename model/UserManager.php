@@ -85,6 +85,22 @@ class UserManager {
         return $apiArray;
     }
 
+    public function getAllApiStats() {
+        $apiArray = array();
+        try {
+            $q = $this->db->prepare('SELECT * FROM `api` order by `nbCall` desc');
+            $this->db->beginTransaction();
+            $q->execute();
+            while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+                $apiArray[] = new User($data);
+            }
+            $this->db->commit();
+        } catch (PDOException $exc) {
+            $this->db->rollback();
+        }
+        return $apiArray;
+    }
+
     public function refreshKey($userId) {
         $newKey = "";
         try {

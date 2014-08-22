@@ -3,7 +3,7 @@
     <ul> 
         <li onClick="location.href = 'index.php?l=apiDashboard'" class="clearer">Home</li>
         <li onClick="location.href = '#'" class="darker">Chart</li>
-        <li onClick="location.href = '#'" class="clearer">Statistics</li>
+        <li onClick="location.href = 'index.php?l=apiStatistics'" class="clearer">Statistics</li>
     </ul> 
     <div class="MenuSeparator">Settings</div>
     <ul>
@@ -34,7 +34,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="index.php?l=apiDashboard">Home</a></li>
                         <li class="disabled"><a href="#">Chart</a></li>
-                        <li class="disabled"><a href="#">Statistics</a></li>
+                        <li><a href="index.php?l=apiStatistics">Statistics</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

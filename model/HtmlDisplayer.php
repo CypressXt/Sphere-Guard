@@ -131,4 +131,53 @@ class htmlDisplayer {
         }
     }
 
+    public static function displayUserStatsTable($db, $userLogged) {
+        $html = '<table id="usersTable" class="table table-striped hidden-xs hidden-sm">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Number of api requests</th>
+            </tr>';
+        if (isset($_SESSION['SphereGuardLogged'])) {
+            include_once 'model/UserManager.php';
+            $userManager = new UserManager($db);
+            $apiArray = $userManager->getAllApiStats();
+            for ($i = 0; $i < count($apiArray); $i++) {
+                $currentUser = $apiArray[$i];
+                $html = $html . '<tr id="line' . $currentUser->getPk_api() . '">';
+                $html = $html . '<td>' . ($i + 1) . '</td>';
+                $html = $html . '<td>' . $currentUser->getName() . '</td>';
+                $html = $html . '<td><span class="label label-default">' . $currentUser->getNbCall() . '</span></td>';
+                $html = $html . '</tr>';
+            }
+            $html = $html . '</table>';
+            return $html;
+        } else {
+            $html = "";
+            return $html;
+        }
+    }
+
+    public static function displayUserStatsTableRespon($db, $userLogged) {
+        if (isset($_SESSION['SphereGuardLogged'])) {
+            include_once 'model/UserManager.php';
+            $userManager = new UserManager($db);
+            $apiArray = $userManager->getAllApiStats();
+            for ($i = 0; $i < count($apiArray); $i++) {
+                $currentUser = $apiArray[$i];
+                $html .= '<div class="panel panel-default hidden-md hidden-lg" id="lineResp' . $currentUser->getPk_api() . '">
+                        <div class="panel-body">
+                          Name: <div class="panelHead">' . $currentUser->getName() . '</div>
+                          <p>Number of api requests: <span class="label label-default">' . $currentUser->getNbCall() . '</span></p></br>
+                          ';
+                $html .= '</div>
+                      </div>';
+            }
+            return $html;
+        } else {
+            $html = "";
+            return $html;
+        }
+    }
+
 }

@@ -24,6 +24,9 @@ switch ($l) {
     case "apiHostsManagement":
         include_once "controller/cApiHostsManagement.php";
         break;
+    case "apiStatistics":
+        include_once "controller/cApiStatistics.php";
+        break;
     case "login":
         include_once "controller/cLogin.php";
         break;
