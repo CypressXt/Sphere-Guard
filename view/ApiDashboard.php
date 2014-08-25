@@ -8,6 +8,11 @@
         </div>
     </div>
     <?php include_once 'Modal.php'; ?>
+    <footer>
+        <div class="glass">
+            <h6 id="aut" onmouseover="$('#aut').tooltip('show');" data-toggle="tooltip" title="2014 - ∞">Clément Hampaï</h6>
+        </div>
+    </footer>
 </body>
 </html>
 

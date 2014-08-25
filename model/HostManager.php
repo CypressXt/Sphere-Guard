@@ -68,6 +68,46 @@ class HostManager {
         return $hostArray;
     }
 
+    public function getHostById($pk_host) {
+        $host = null;
+        try {
+            $q = $this->db->prepare('SELECT * FROM `host` WHERE `pk_host` = :pk_host');
+            $q->bindValue(':pk_host', $pk_host, PDO::PARAM_STR);
+            $this->db->beginTransaction();
+            $q->execute();
+            $data = $q->fetch(PDO::FETCH_ASSOC);
+            if ($data) {
+                $host = new Host($data);
+            }
+            $this->db->commit();
+        } catch (PDOException $exc) {
+            $this->db->rollback();
+        }
+        return $host;
+    }
+
+    public function getCpuOverview() {
+        $allInfo = array();
+        $q = $this->db->prepare('(SELECT * FROM (SELECT * FROM `performance` WHERE performance.fk_type = 2 order by performance.date desc) as info group by `fk_host` ) order by `value` desc');
+        $q->execute();
+
+        while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+            $allInfo[] = $data;
+        }
+        return $allInfo;
+    }
+
+    public function getTmpOverview() {
+        $allInfo = array();
+        $q = $this->db->prepare('(SELECT * FROM (SELECT * FROM `performance` WHERE performance.fk_type = 4 order by performance.date desc) as info group by `fk_host` ) order by `value` desc');
+        $q->execute();
+
+        while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+            $allInfo[] = $data;
+        }
+        return $allInfo;
+    }
+
     public function removeHost($pk_host) {
         $isOk = false;
         try {
