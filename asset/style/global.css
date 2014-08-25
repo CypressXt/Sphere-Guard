@@ -34,7 +34,6 @@ body{
 /*API DASHBOARD*/
 
 .dashWrapper{
-    padding: 1em;
     width: 95%;
     height: 95%;
     margin-left: auto;
@@ -44,8 +43,10 @@ body{
 
 .leftMenu{
     margin-top: 50px;
-    height: 50%;
-    padding: 0px;
+    margin-bottom: 50px;
+    min-height: 90%;
+    padding-left: 0px;
+    padding-right: 0px;
     background-color: rgba(70, 70, 70, 0.6);
 }
 
@@ -79,8 +80,8 @@ body{
 
 .dashBoard{
     margin-top: 50px;
-    min-height: 90%;
     margin-bottom: 50px;
+    min-height: 90%;
     background-color: #f0f1f3;
     padding: 2em;
     color: black;
