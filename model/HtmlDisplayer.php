@@ -320,4 +320,57 @@ class htmlDisplayer {
         }
     }
 
+    public static function displayActiveUserTable($db) {
+        if (isset($_SESSION['SphereGuardLogged'])) {
+            include_once 'model/HostManager.php';
+            include_once 'model/Host.php';
+            $hostManager = new HostManager($db);
+            $html = '<table class="table table-striped hidden-xs hidden-sm">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Request</th>
+            </tr>';
+            $cpuUsageByHost = $hostManager->getActiveUsers();
+            for ($i = 0; $i < count($cpuUsageByHost); $i++) {
+                $currentInfo = $cpuUsageByHost[$i];
+                $html = $html . '<tr>';
+                $html = $html . '<td>' . ($i + 1) . '</td>';
+                $html = $html . '<td>' . $currentInfo['name'] . '</td>';
+                $html = $html . '<td><span class="label label-default">' . $currentInfo['nbCall'] . '</span></td>';
+                $html .= '</tr>';
+            }
+            $html .= '</table>';
+            return $html;
+        } else {
+            $html = "";
+            return $html;
+        }
+    }
+
+    public static function displayActiveUsertableRespon($db) {
+        if (isset($_SESSION['SphereGuardLogged'])) {
+            include_once 'model/HostManager.php';
+            include_once 'model/Host.php';
+            $hostManager = new HostManager($db);
+            $cpuUsageByHost = $hostManager->getActiveUsers();
+            for ($i = 0; $i < count($cpuUsageByHost); $i++) {
+                $currentInfo = $cpuUsageByHost[$i];
+                $hostObj = new Host(array());
+                $hostObj = $hostManager->getHostById($currentInfo['fk_host']);
+                $html .= '<div class="panel panel-default hidden-md hidden-lg">
+                        <div class="panel-body">
+                            <div class="panelHead">' . $currentInfo['name'] . '</div>';
+                $html.='<p>nb of requests: <span class="label label-default">' . $currentInfo['nbCall'] . '</span></p></br>';
+                $html .= '</div>
+                      </div>';
+            }
+            $html .='<p>Most active users</p>';
+            return $html;
+        } else {
+            $html = "";
+            return $html;
+        }
+    }
+
 }

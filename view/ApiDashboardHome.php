@@ -36,7 +36,7 @@ $dashboardContent = '
                 <h3 class="panel-title">Top 5 active users</h3>
             </div>
             <div class="panel-body">
-              Basic panel example
+              ' . $activeUserTable . '
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@ $dashboardContent = '
                 <h3 class="panel-title">Alerts</h3>
             </div>
             <div class="panel-body">
-            Basic panel example
+                Don\'t panic, <span class="label label-success">green</span> light everywhere...
             </div>
         </div>
     </div>
@@ -83,7 +83,7 @@ $dashboardContent = '
                 <h3 class="panel-title">Top 5 active users</h3>
             </div>
             <div class="panel-body">
-              Basic panel example
+              '.$activeUserTableRespon.'
             </div>
         </div>
         <div class="panel panel-default">
@@ -91,7 +91,7 @@ $dashboardContent = '
                 <h3 class="panel-title">Alerts</h3>
             </div>
             <div class="panel-body">
-            Basic panel example
+                Don\'t panic, <span class="label label-success">green</span> light everywhere...
             </div>
         </div>
     </div>

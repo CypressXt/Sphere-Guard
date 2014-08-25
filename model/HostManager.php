@@ -108,6 +108,17 @@ class HostManager {
         return $allInfo;
     }
 
+    public function getActiveUsers() {
+        $allInfo = array();
+        $q = $this->db->prepare('SELECT * FROM `api` order by `nbCall` desc limit 5');
+        $q->execute();
+
+        while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+            $allInfo[] = $data;
+        }
+        return $allInfo;
+    }
+
     public function removeHost($pk_host) {
         $isOk = false;
         try {

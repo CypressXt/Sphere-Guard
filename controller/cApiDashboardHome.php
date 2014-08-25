@@ -20,6 +20,8 @@ if (!isset($_SESSION['SphereGuardLogged'])) {
     $cpuUsageTableRespon = displayCpuInfoRespon($db);
     $tmpTable = displayTmpInfo($db);
     $tmpTableRespon = displayTmpInfoRespon($db);
+    $activeUserTable = displayActiveUserTable($db);
+    $activeUserTableRespon = displayActiveUserTableRespon($db);
     include_once 'view/ApiDashboardHome.php';
     $dashboardError = $_SESSION['SphereGuardError'];
     include_once 'view/ApiDashboard.php';
@@ -39,4 +41,12 @@ function displayTmpInfo($db) {
 
 function displayTmpInfoRespon($db) {
     return htmlDisplayer::displayTmpTableRespon($db);
+}
+
+function displayActiveUserTable($db) {
+    return htmlDisplayer::displayActiveUserTable($db);
+}
+
+function displayActiveUserTableRespon($db) {
+    return htmlDisplayer::displayActiveUsertableRespon($db);
 }
