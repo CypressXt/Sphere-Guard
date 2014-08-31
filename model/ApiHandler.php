@@ -52,7 +52,7 @@ class ApiHandler {
 
     public function getInfoByHost($hostId) {
         $allInfo = array();
-        $q = $this->_db->prepare('SELECT * FROM  `performance` inner join performance_type on fk_type = pk_type WHERE fk_host =:hostId order by date desc limit 5');
+        $q = $this->_db->prepare('( SELECT * FROM  `performance` inner join performance_type on fk_type = pk_type WHERE fk_host =:hostId order by date desc limit 5 ) order by pk_type');
         $q->bindValue(':hostId', $hostId, PDO::PARAM_STR);
         $q->execute();
 
