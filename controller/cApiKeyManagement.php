@@ -1,7 +1,9 @@
 <?php
 
 /*
- * CypressXt
+ * 
+ * Clément Hampaï
+ * 
  */
 
 if (!isset($_SESSION['SphereGuardLogged'])) {

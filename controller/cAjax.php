@@ -1,7 +1,7 @@
 <?php
 
 /*
- * CypressXt
+ * Clément Hampaï
  */
 
 session_start();
@@ -21,6 +21,11 @@ $userLogged = unserialize($_SESSION['SphereGuardLogged']);
 //                         AJAX PHP FUNCTIONS                            
 //------------------------------------------------------------------------------
 
+/**
+ * This function is called by JS.
+ * It remove the user selected by id.
+ * {int} user_pk
+ */
 if ($_POST['function'] == "removeApiUser" && $_POST['user_pk'] != "") {
     if (isset($_SESSION['SphereGuardLogged'])) {
         $userLogged = unserialize($_SESSION['SphereGuardLogged']);
@@ -34,6 +39,11 @@ if ($_POST['function'] == "removeApiUser" && $_POST['user_pk'] != "") {
     }
 }
 
+/**
+ * This function is called by JS.
+ * It create a new api key and assign it to the user selected by id.
+ * {int} user_pk
+ */
 if ($_POST['function'] == "refreshKey" && $_POST['user_pk'] != "") {
     if (isset($_SESSION['SphereGuardLogged'])) {
         $userManager = new UserManager($db);
@@ -44,6 +54,15 @@ if ($_POST['function'] == "refreshKey" && $_POST['user_pk'] != "") {
     }
 }
 
+/**
+ * This function is called by JS.
+ * It create a new user with all his attribute.
+ * {String} name
+ * {String} mail
+ * {String} password
+ * {String} passConf
+ * {0/1} isAdministrator
+ */
 if ($_POST['function'] == "addUser" && $_POST['name'] != "" && $_POST['mail'] != "" && $_POST['password'] != "" && $_POST['passConf'] != "" && $_POST['isAdministrator'] != "") {
     if (isset($_SESSION['SphereGuardLogged'])) {
         $isAdmin = ($_POST['isAdministrator'] == "true") ? 1 : 0;
@@ -66,6 +85,10 @@ if ($_POST['function'] == "addUser" && $_POST['name'] != "" && $_POST['mail'] !=
     }
 }
 
+/**
+ * This function is called by JS.
+ * It refresh the user's table.
+ */
 if ($_POST['function'] == "refreshUserTable") {
     if (isset($_SESSION['SphereGuardLogged'])) {
         $html = htmlDisplayer::displayUserTable($db, $userLogged);
@@ -76,6 +99,12 @@ if ($_POST['function'] == "refreshUserTable") {
     }
 }
 
+/**
+ * This function is called by JS.
+ * It create a new host with all his attribute.
+ * {String} name
+ * {String} ipAddr
+ */
 if ($_POST['function'] == "addHost" && $_POST['name'] != "" && $_POST['ipAddr'] != "") {
     if (isset($_SESSION['SphereGuardLogged'])) {
         $hostManager = new HostManager($db);
@@ -91,6 +120,10 @@ if ($_POST['function'] == "addHost" && $_POST['name'] != "" && $_POST['ipAddr'] 
     }
 }
 
+/**
+ * This function is called by JS.
+ * It refresh the table witch contain the host list.
+ */
 if ($_POST['function'] == "refreshHostTable") {
     if (isset($_SESSION['SphereGuardLogged'])) {
         $html = htmlDisplayer::displayHostTable($db, $userLogged);
@@ -101,7 +134,11 @@ if ($_POST['function'] == "refreshHostTable") {
     }
 }
 
-
+/**
+ * This function is called by JS.
+ * It remove an host given by id.
+ * {int} hostId
+ */
 if ($_POST['function'] == "removeApiHost" && $_POST['hostId'] != "") {
     if (isset($_SESSION['SphereGuardLogged'])) {
         $hostManager = new HostManager($db);

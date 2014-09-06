@@ -1,7 +1,9 @@
 <?php
 
 /*
- * CypressXt
+ * 
+ * Clément Hampaï
+ * 
  */
 
 include_once ('view/ApiInstall.php');

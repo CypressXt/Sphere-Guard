@@ -1,3 +1,9 @@
+/**
+ * 
+ * Clément Hampaï
+ * 
+ */
+
 function checkGrav(email, size) {
     var gravemail = MD5(email);
     if (httpGet("http://www.gravatar.com/avatar/" + gravemail + "?d=404") != "false") {

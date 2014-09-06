@@ -1,9 +1,14 @@
 /* 
- * CypressXt
+ * Clément Hampaï
  */
 
 var nbClickRemoveUser = 0;
 
+/**
+ * This function remove the given user by id.
+ * @param {int} userId
+ * @returns {void}
+ */
 function requestAjaxRemoveUser(userId) {
     var line = document.getElementById('line' + userId);
     if (nbClickRemoveUser === 1) {
@@ -25,6 +30,11 @@ function requestAjaxRemoveUser(userId) {
     }
 }
 
+/**
+ * This function create a new api key and set it to the given user by id.
+ * @param {int} userId
+ * @returns {void}
+ */
 function requestAjaxRefreshKeyUser(userId) {
     var inputKey = document.getElementById('key' + userId);
     $.post('/SphereGuard/controller/cAjax.php', {function: "refreshKey", user_pk: userId}, function(e) {
@@ -34,7 +44,17 @@ function requestAjaxRefreshKeyUser(userId) {
     });
 }
 
-
+/**
+ * This function create a new api user, if isAdministrator is set to 1
+ * the new user can log in the administration panel, otherwise he can only use
+ * the Sphere-Guard api. 
+ * @param {string} name
+ * @param {string} mail
+ * @param {string} password
+ * @param {string} passwordConf
+ * @param {0/1} isAdministrator
+ * @returns {void}
+ */
 function requestAjaxCreateUser(name, mail, password, passwordConf, isAdministrator) {
     var name = name.val();
     var mail = mail.val();
@@ -67,6 +87,10 @@ function requestAjaxCreateUser(name, mail, password, passwordConf, isAdministrat
     });
 }
 
+/**
+ * This function refresh the user's table.
+ * @returns {void}
+ */
 function requestAjaxUpdateUserTable() {
     $.post('/SphereGuard/controller/cAjax.php', {function: "refreshUserTable"}, function(e) {
         if (e !== "") {
@@ -76,6 +100,12 @@ function requestAjaxUpdateUserTable() {
     });
 }
 
+/*
+ * This function add a new host and refresh the host's table.
+ * @param {string} name hostname
+ * @param {string} ipAddr IPv4 from the new host
+ * @returns {void}
+ */
 function requestAjaxCreateHost(name, ipAddr) {
     var name = name.val();
     var ipAddr = ipAddr.val();
@@ -106,6 +136,10 @@ function requestAjaxCreateHost(name, ipAddr) {
     });
 }
 
+/**
+ * This function update the host's table.
+ * @returns {void}
+ */
 function requestAjaxUpdatehostTable() {
     $.post('/SphereGuard/controller/cAjax.php', {function: "refreshHostTable"}, function(e) {
         if (e !== "") {
@@ -114,6 +148,11 @@ function requestAjaxUpdatehostTable() {
     });
 }
 
+/**
+ * This function remove the host given by id.
+ * @param {int} hostId
+ * @returns {void}
+ */
 function requestAjaxRemoveHost(hostId) {
     if (nbClickRemoveUser === 1) {
         $.post('/SphereGuard/controller/cAjax.php', {function: "removeApiHost", hostId: hostId}, function(e) {

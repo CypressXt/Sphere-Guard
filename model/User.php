@@ -1,7 +1,9 @@
 <?php
 
 /*
- * CypressXt
+ * 
+ * Clément Hampaï
+ * 
  */
 
 class User {

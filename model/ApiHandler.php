@@ -1,16 +1,11 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * Clément Hampaï 
+ * 
  */
 
-/**
- * Description of Api
- *
- * @author CypressXt
- */
 class ApiHandler {
 
     private $_db;
@@ -228,6 +223,13 @@ class ApiHandler {
         $q = $this->_db->prepare('UPDATE `api` SET nbCall = nbCall + 1 WHERE `name` like :name');
         $q->bindValue(':name', $apiUser, PDO::PARAM_STR);
         $q->execute();
+    }
+
+    public function throwError($message) {
+        $html = '{ "error":"';
+        $html .= $message;
+        $html .= '"}';
+        return $html;
     }
 
 }

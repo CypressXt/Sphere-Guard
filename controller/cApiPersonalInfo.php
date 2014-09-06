@@ -1,7 +1,9 @@
 <?php
 
 /*
- * CypressXt
+ * 
+ * Clément Hampaï
+ * 
  */
 
 if (!isset($_SESSION['SphereGuardLogged'])) {
@@ -41,7 +43,7 @@ function checkUpdateInfo($db, $userLogged) {
             }
 
             //check if the mail@ is valid and don't already exist
-            if ($newMail == "" ) {
+            if ($newMail == "") {
                 $_SESSION['SphereGuardError'] = $_SESSION['errorForm'] . '<div class="alert alert-warning">Invalid @Mail or already taken</div>';
                 return false;
             }

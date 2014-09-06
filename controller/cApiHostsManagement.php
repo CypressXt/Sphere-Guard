@@ -1,7 +1,9 @@
 <?php
 
 /*
- * CypressXt
+ * 
+ * Clément Hampaï
+ * 
  */
 
 if (!isset($_SESSION['SphereGuardLogged'])) {
@@ -33,18 +35,18 @@ function displayUserAndKeyResponsive($db, $userLogged) {
 
 function displayNewHostFrom($db) {
     $html = '<form class="form-horizontal" id="newHostForm" role="form" method="POST">
-    <div class="form-group">
-        <label for="inputName" class="col-sm-2 control-label">Hostname</label>
-        <div class="col-sm-10">
-            <input name="inputName" type="text" class="form-control"  id="inputName" placeholder="Hostname">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputIp" class="col-sm-2 control-label">Ip address</label>
-        <div class="col-sm-10">
-            <input name="inputIp" type="text" class="form-control" id="inputIp" placeholder="Ip address">
-        </div>
-    </div>
-</form>';
+                <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Hostname</label>
+                    <div class="col-sm-10">
+                        <input name="inputName" type="text" class="form-control"  id="inputName" placeholder="Hostname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputIp" class="col-sm-2 control-label">Ip address</label>
+                    <div class="col-sm-10">
+                        <input name="inputIp" type="text" class="form-control" id="inputIp" placeholder="Ip address">
+                    </div>
+                </div>
+            </form>';
     return $html;
 }

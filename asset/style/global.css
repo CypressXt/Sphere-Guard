@@ -1,6 +1,11 @@
 /* 
- *   CypressXt
+ *   Clément Hampaï
 */
+
+
+/* ########################################################################## */
+/* ------------ Global style ------------------------------------------------ */
+/* ########################################################################## */
 
 html{
     width:100%;
@@ -30,8 +35,9 @@ body{
     background-size: cover;
 }
 
-
-/*API DASHBOARD*/
+/* ########################################################################## */
+/* ------------ API DASHBOARD ----------------------------------------------- */
+/* ########################################################################## */
 
 .dashWrapper{
     width: 95%;
@@ -40,6 +46,20 @@ body{
     margin-right: auto;
     color: #FFF;
 }
+
+.dashBoard{
+    margin-top: 65px;
+    margin-bottom: 50px;
+    min-height: 90%;
+    background-color: #f0f1f3;
+    padding: 2em;
+    color: black;
+}
+
+
+/* ########################################################################## */
+/* ------------ API MENU ---------------------------------------------------- */
+/* ########################################################################## */
 
 .leftMenu{
     margin-top: 50px;
@@ -78,30 +98,6 @@ body{
     background-color: #94AEBB;
 }
 
-.dashBoard{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    min-height: 90%;
-    background-color: #f0f1f3;
-    padding: 2em;
-    color: black;
-}
-
-.helloh1{
-    padding-top: 2em;
-}
-
-.page-header{
-    border-bottom: 1px solid #000;
-}
-.page-header h1{
-    font-size: 38px;
-}
-
-td{
-    vertical-align: middle !important;
-}
-
 .navbar {
     margin-bottom: 0px !important;
     background-color: rgba(255, 255, 255, 0.96);
@@ -119,9 +115,30 @@ td{
     background-color: #428bca; 
 }
 
+
+/* ########################################################################## */
+/* ------------ Pages font style -------------------------------------------- */
+/* ########################################################################## */
+
+.helloh1{
+    padding-top: 2em;
+}
+
+.page-header{
+    border-bottom: 1px solid #000;
+}
+.page-header h1{
+    font-size: 38px;
+}
+
 .panelHead{
     font-size: 25px;
     margin-bottom: 10px;
+}
+
+
+td{
+    vertical-align: middle !important;
 }
 
 .panel-body{
@@ -143,6 +160,10 @@ td{
     border-radius: 6px;
 }
 
+
+/* ########################################################################## */
+/* ------------ Footer ------------------------------------------------------ */
+/* ########################################################################## */
 
 footer{
     color: black;
