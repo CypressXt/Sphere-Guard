@@ -99,7 +99,7 @@ class HostManager {
 
     public function getTmpOverview() {
         $allInfo = array();
-        $q = $this->db->prepare('(SELECT * FROM (SELECT * FROM `performance` WHERE performance.fk_type = 4 order by performance.date desc) as info group by `fk_host` ) order by `value` desc');
+        $q = $this->db->prepare('(SELECT * FROM (SELECT * FROM `performance` WHERE performance.fk_type = 4 order by performance.date desc) as info group by `fk_host` ) order by `value`');
         $q->execute();
 
         while ($data = $q->fetch(PDO::FETCH_ASSOC)) {

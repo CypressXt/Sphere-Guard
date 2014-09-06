@@ -54,7 +54,7 @@ $dashboardContent = '
                 <h3 class="panel-title">Alerts</h3>
             </div>
             <div class="panel-body">
-                Don\'t panic, <span class="label label-success">green</span> lights everywhere...
+                Not Implemented yet...
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@ $dashboardContent = '
                 <h3 class="panel-title">Alerts</h3>
             </div>
             <div class="panel-body">
-                Don\'t panic, <span class="label label-success">green</span> lights everywhere...
+                Not Implemented yet...
             </div>
         </div>
     </div>
