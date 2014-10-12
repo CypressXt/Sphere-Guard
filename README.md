@@ -35,6 +35,9 @@ You can refresh all the api key here. You can also create new users (futur api c
 You can add or remove your watched hosts on this panel.
 ![Alt text](https://lh4.googleusercontent.com/-t0x7esjkZ3Y/VDlJ_GHcNvI/AAAAAAAACFA/e_BMS_KSrxs/w2236-h1198-no/Capture%2Bd’écran%2B2014-10-11%2Bà%2B17.12.35.png "Login view")
 
+### Api statistics view
+Here you can see which user is a regular user of your api:
+![Alt text](https://lh6.googleusercontent.com/-8aOR2bowAro/VDlJ_Ds0QwI/AAAAAAAACE0/4tY0XJg_CGk/w2236-h1198-no/Capture%2Bd’écran%2B2014-10-11%2Bà%2B17.12.19.png "Stats view")
 
 ### Personal informations view
 This page allow you to update and modify your personal data:
