@@ -22,13 +22,24 @@ This tool can be installed easily on most of the UNIX based OS.
 Here are some screenshot of the API admin panel:
 
 
+### Home view
+Here is the page that you can see just after a successful login.
+You have access to an overview of all your domain.
+![Alt text](https://lh6.googleusercontent.com/-6mZvWzQ3Hhg/VDlJ_Fb069I/AAAAAAAACFE/J0uVcATmkD8/w2236-h1200-no/Capture%2Bd’écran%2B2014-10-11%2Bà%2B17.09.50.png "Home view")
+
 ### Api key and user management view
 You can refresh all the api key here. You can also create new users (futur api client) and manage access to your api's admin panel.
-![Alt text](https://lh6.googleusercontent.com/-VomJR6E0ukc/U5OAOJN48TI/AAAAAAAAB9E/fNlT0REb0L4/w2876-h1608-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-07+a%25CC%2580+23.05.42.png "Api key and user management view")
+![Alt text](https://lh6.googleusercontent.com/-0m3mHbn_p5g/VDlKAMkQaOI/AAAAAAAACFI/boVsC6YkZxo/w2236-h1196-no/Capture%2Bd’écran%2B2014-10-11%2Bà%2B17.12.46.png "Api key and user management view")
 
 ### Api host management view
 You can add or remove your watched hosts on this panel.
-![Alt text](https://lh5.googleusercontent.com/-UfYH11GXTBc/U5R29sjrILI/AAAAAAAAB9w/F_rA-cVoUFI/w2878-h1576-no/Capture+d%25E2%2580%2599e%25CC%2581cran+2014-06-08+a%25CC%2580+16.44.17.png "Login view")
+![Alt text](https://lh4.googleusercontent.com/-t0x7esjkZ3Y/VDlJ_GHcNvI/AAAAAAAACFA/e_BMS_KSrxs/w2236-h1198-no/Capture%2Bd’écran%2B2014-10-11%2Bà%2B17.12.35.png "Login view")
+
+
+### Personal informations view
+This page allow you to update and modify your personal data:
+![Alt text](https://lh5.googleusercontent.com/-5UbXqRvbS-U/VDlKAoGhCzI/AAAAAAAACFM/lSQwTmZKloo/w2236-h1194-no/Capture%2Bd’écran%2B2014-10-11%2Bà%2B17.13.16.png "Personal informations view")
+
 
 ---
 # Upcoming Development
