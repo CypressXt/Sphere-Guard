@@ -12,5 +12,6 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="asset/javascript/gravatar.js"></script>
         <script src="asset/javascript/ajax.js"></script>
+        <script src="asset/javascript/displayer.js"></script>
         <title>Sphere Guard</title>
     </head>
