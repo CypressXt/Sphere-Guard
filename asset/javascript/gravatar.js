@@ -1,7 +1,5 @@
-/**
- * 
+/* 
  * Clément Hampaï
- * 
  */
 
 function checkGrav(email, size) {
