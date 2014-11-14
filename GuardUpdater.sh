@@ -31,7 +31,7 @@ if [ -z $(command -v pvdisplay) ] && [ "$isLVMStorage" = 1 ]
 then
     echo "pvdisplay is required !"
     echo "Exiting"
-    #exit 1
+    exit 1
 fi
 
 if [ -z $(command -v sensors) ]
