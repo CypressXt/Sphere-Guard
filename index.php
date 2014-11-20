@@ -36,6 +36,9 @@ switch ($l) {
     case "personalInfo":
         include_once "controller/cApiPersonalInfo.php";
         break;
+    case "resource":
+        echo '{"name": "Sphere Guard","version": "0.1"}';
+        break;
     case false:
         include_once "controller/cApiDashboardHome.php";
         break;
