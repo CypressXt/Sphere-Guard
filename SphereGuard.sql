@@ -89,6 +89,17 @@ CREATE TABLE IF NOT EXISTS `performance_type` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
+-- Contenu de la table `performance_type`
+--
+
+INSERT INTO `performance_type` (`pk_type`, `name`, `unit`) VALUES
+(1, 'Used RAM', '%'),
+(2, 'Cpu usage', '%'),
+(3, 'Disk usage', '%'),
+(4, 'cpuTemp', '°C'),
+(5, 'hddTemp', '°C');
+
+--
 -- Index pour les tables exportées
 --
 
