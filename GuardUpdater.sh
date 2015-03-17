@@ -82,7 +82,9 @@ then
     DiskUsage=$(echo $DiskUs | cut -d"." -f1);
 else
     ## Disk Usage (No-lvmVolume)
-    DiskUsage=$(df -Ph $hddToWatch | tail -1 | awk '{print $4}' | cut -d'G' -f1)
+    DiskCapacity=$(df -Ph $hddToWatch | tail -1 | awk '{print $2}' |  cut -d'G' -f1)
+    DiskCurrentUsage=$(df -Ph $hddToWatch | tail -1 | awk '{print $4}' |  cut -d'G' -f1)
+    DiskUsage=$(($DiskCapacity/($DiskCapacity-$DiskCurrentUsage)))
 fi
 #############################################
 
