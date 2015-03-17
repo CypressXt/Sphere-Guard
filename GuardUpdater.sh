@@ -81,7 +81,6 @@ then
     DiskUs=$(echo 100-$DiskFree*100/$DiskTotal | bc -l)
     DiskUsage=$(echo $DiskUs | cut -d"." -f1);
 else
-then
     ## Disk Usage (No-lvmVolume)
     DiskUsage=$(df -Ph $hddToWatch | tail -1 | awk '{print $4}' | cut -d'G' -f1)
 fi
@@ -94,7 +93,7 @@ tempCPU=${t/°C/}
 ##########################################
 
 ## HDD Temp ##############################
-tmpH=`hddtemp $hddToWatch | awk '{print $4}'`
+tmpH=`sudo hddtemp $hddToWatch | awk '{print $4}'`
 tHD=${tmpH#*+}
 tempHD=${tHD/°C/}
 ##########################################
