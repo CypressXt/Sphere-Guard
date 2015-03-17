@@ -100,8 +100,13 @@ tHD=${tmpH#*+}
 tempHD=${tHD/°C/}
 ##########################################
 
+## HDD Temp ##############################
+localIp=$(ip a s|sed -ne '/127.0.0.1/!{s/^[ \t]*inet[ \t]*\([0-9.]\+\)\/.*$/\1/p}')
+##########################################
+
 ## SQL REQUEST ###########################
 mysql --host=$dbHost --user=$dbUser --password=$dbPassword $dbName << EOF
+UPDATE host SET ip="${localIp}" WHERE pk_host="${hostNumberID}";
 INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('1','${UsedMem}','${hostNumberID}',NOW());
 INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('2','${CpuUsage}','${hostNumberID}',NOW());
 INSERT INTO performance (fk_type, value, fk_host, date) VALUES ('3','${DiskUsage}','${hostNumberID}',NOW());
